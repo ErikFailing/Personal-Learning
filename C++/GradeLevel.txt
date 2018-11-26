@@ -1,0 +1,62 @@
+Output:
+
+This program prints an appropiate grade level given
+Enter academic year/level (f, s, j or r): f
+Freshman
+Enter academic year/level (f, s, j or r): S
+Sophmore
+Enter academic year/level (f, s, j or r): j
+Junior
+Enter academic year/level (f, s, j or r): R
+Senior
+Enter academic year/level (f, s, j or r): ?
+Error, invalid entry.
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main() 
+{
+	//Print this program's use
+	cout << "This program prints an appropiate grade level given\n";
+
+	//Declare variable
+	char academicLevel;
+
+	//Loop 5 times
+	for (int index = 1; index <= 5; index += 1) {
+		//Get input
+		cout << "Enter academic year/level (f, s, j or r): ";
+		cin >> academicLevel;
+		//Convert to lowercase
+		academicLevel = tolower(academicLevel);
+		//Switch
+		switch (academicLevel) {
+		case 'f':
+			cout << "Freshman\n";
+			break;
+		case 's':
+			cout << "Sophmore\n";
+			break;
+		case 'j':
+			cout << "Junior\n";
+			break;
+		case 'r':
+			cout << "Senior\n";
+			break;
+		default:
+			cout << "Error, invalid entry.\n";
+			break;
+		}
+	}
+
+	return 0;
+}

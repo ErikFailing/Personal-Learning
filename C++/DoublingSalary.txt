@@ -1,0 +1,152 @@
+Output:
+
+This program calculates your pay working 31 days with an initial salary of $.01, doubling every day.
+ Day:                Pay:
+    1               $0.01
+    2               $0.02
+    3               $0.04
+    4               $0.08
+    5            Sick Day
+    6               $0.32
+    7               $0.64
+    8               $1.28
+    9               $2.56
+   10               $5.12
+   11              $10.24
+   12              $20.48
+   13              $40.96
+   14              $81.92
+   15             $163.84
+   16             $327.68
+   17             $655.36
+   18           $1,310.72
+   19           $2,621.44
+   20           $5,242.88
+   21          $10,485.76
+   22          $20,971.52
+   23          $41,943.04
+   24          $83,886.08
+   25         $167,772.16
+   26         $335,544.32
+   27         $671,088.64
+   28       $1,342,177.28
+   29       $2,684,354.56
+   30            Sick Day
+   31      $10,737,418.24
+Average daily pay without days 5 and 25 is: $734,726.35
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+//Takes in a double and formats it with commas, then returns it as a string
+string formatDoubleWithCommas(double num) {
+	string numString;
+	numString = to_string(num);
+	if (num > 999.0) {
+		//To make this work with a double/float, we just need to get change numString.length() to where the "." is
+		int length = numString.find('.');
+		//Get length, then minus three
+		int pos = length - 3;
+		//Start at end of string and work backwards
+		int counter = 0;
+		while (pos > 0) {
+			//if counter % 3 == 0 add a , at pos
+			if (counter % 3 == 0) numString.insert(pos, ",");
+			counter += 1;
+			pos -= 1;
+		}
+	}
+
+	//Special formating for Assignment 12 only
+	numString.insert(0, "$");
+	numString.erase(numString.length() - 4, numString.length());
+	return numString;
+}
+
+int main()
+{
+	//Print what this program does
+	cout << "This program calculates your pay working 31 days with an initial salary of $.01, doubling every day." << endl;
+
+	//Initialize variables
+	ofstream outfile;
+	double pay = .01;
+	double totalPay = 0;
+	double payArray[31] = { 0 };
+	double averagePay = 0;
+
+	//Calculate pay for each day
+	for (int i = 0; i <= 30; i += 1) 
+	{
+		payArray[i] = pay;
+		pay = pay * 2;
+	}
+
+	//Calculate total pay with sick days on the 5th and 25th
+	for (int i = 0; i <= 30; i += 1)
+	{
+		if (i == 4) continue;
+		if (i == 24) continue;
+		totalPay += payArray[i];
+	}
+	//Calculate average pay
+	averagePay = totalPay / 29.0;
+
+	//Print out results to console with days 5 and 30 as sick days
+	cout << setw(5) << "Day:" << setw(20) << "Pay:" << endl;
+	for (int i = 0; i <= 30; i += 1)
+	{
+		cout << setw(5) << i + 1;
+		if (i == 4) {
+			cout << setw(20) << "Sick Day" << endl;
+			continue;
+		}
+		if (i == 29) {
+			cout << setw(20) << "Sick Day" << endl;
+			continue;
+		}
+		cout << setw(20) << formatDoubleWithCommas(payArray[i]) << endl; // add commas and $
+	}
+	cout << "Average daily pay without days 5 and 25 is: " << formatDoubleWithCommas(averagePay) << endl;
+
+	//Create file
+	outfile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment12Data.txt");
+	if (!outfile) //file not created
+	{
+		cout << "Can't create the output file, check file path.\n";
+		cout << "This program will terminate.\n";
+		return 0;
+	}
+
+	//Print results to file
+	outfile << setw(5) << "Day:" << setw(20) << "Pay:" << endl;
+	for (int i = 0; i <= 30; i += 1)
+	{
+		outfile << setw(5) << i + 1;
+		if (i == 4) {
+			outfile << setw(20) << "Sick Day" << endl;
+			continue;
+		}
+		if (i == 29) {
+			outfile << setw(20) << "Sick Day" << endl;
+			continue;
+		}
+		outfile << setw(20) << formatDoubleWithCommas(payArray[i]) << endl; // add commas and $
+	}
+	outfile << "Average daily pay without days 5 and 25 is: " << formatDoubleWithCommas(averagePay) << endl;
+
+	//Close file
+	outfile.close();
+
+	return 0;
+}

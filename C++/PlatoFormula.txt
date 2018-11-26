@@ -1,0 +1,100 @@
+Output:
+
+This program calculates the ideal age of a spouse using Plato's archaic forumla.
+Please enter an age: 28
+Please enter a gender (m or f): m
+According to Plato's formula, if you're age 28 and male, your ideal spouse is age 21 and female.
+
+Please enter an age: 70
+Please enter a gender (m or f): m
+According to Plato's formula, if you're age 70 and male, your ideal spouse is age 42 and female.
+He is robbing the cradle!
+
+Please enter an age: 18
+Please enter a gender (m or f): m
+According to Plato's formula, if you're age 18 and male, your ideal spouse is age 16 and female.
+He is very young to marry!
+
+Please enter an age: 32
+Please enter a gender (m or f): f
+According to Plato's formula, if you're age 32 and female, your ideal spouse is age 50 and male.
+
+Please enter an age: 60
+Please enter a gender (m or f): f
+According to Plato's formula, if you're age 60 and female, your ideal spouse is age 106 and male.
+
+Please enter an age: 13
+Please enter a gender (m or f): f
+According to Plato's formula, if you're age 13 and female, your ideal spouse is age 12 and male.
+Legally, she is too young to marry.
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main() 
+{
+	//Print program's objective
+	cout << "This program calculates the ideal age of a spouse using Plato's archaic forumla." << endl;
+
+	//Delaring variables
+	int age;
+	char gender;
+	int spouseAge;
+
+	for (int index = 1; index <= 6; index += 1)
+	{
+		age = -1;
+		gender = '?';
+		//Get inputs from user and validate those inputs
+		while (age < 0 || age > 150)
+		{
+			//Get input
+			cout << "Please enter an age: ";
+			cin >> age;
+			//Print error message if needed
+			if (age < 0 || age > 150) cout << "ERROR, invalid age input.";
+		}
+		while (!(gender == 'm' || gender == 'f'))
+		{
+			//Get input
+			cout << "Please enter a gender (m or f): ";
+			cin >> gender;
+			//Change to lowercase
+			gender = tolower(gender);
+			//Print error message if needed
+			if (!(gender == 'm' || gender == 'f')) cout << "ERROR, invalid gender input.";
+		}
+		//Perform plato's calculation
+		if (gender == 'm')
+		{
+			spouseAge = (age / 2) + 7;
+			cout << "According to Plato's formula, if you're age "
+				<< age << " and male, your ideal spouse is age " << spouseAge << " and female.\n";
+			//Print remarks
+			if (age < 25) cout << "He is very young to marry!\n";
+			else if (age > 60) cout << "He is robbing the cradle!\n";
+
+		}
+		else if (gender == 'f')
+		{
+			spouseAge = (age * 2) - 14;
+			cout << "According to Plato's formula, if you're age "
+				<< age << " and female, your ideal spouse is age " << spouseAge << " and male.\n";
+			//Print remarks
+			if (age < 19) cout << "Legally, she is too young to marry.\n";
+			else if (age > 60) cout << "She might be a gold digger!\n";
+		}
+		cout << endl;
+	}
+
+	return 0;
+}

@@ -1,0 +1,269 @@
+Output:
+
+This program takes in bowler scores from a file and prints them into a nicely formatted table.
+Bowler's Name:       Game 1:     Game 2:     Game 3:   Bowler Average:
+
+Linus too good           100          23         210            111.00
+Charlie brown              1           2          12              5.00
+Snoopy                   300         300         100            233.33
+Peperment Patty          223         300         221            248.00
+Pig Pen                  234         123         212            189.67
+Red Headed Girl          123         222         111            152.00
+Marcey                     1           2           3              2.00
+keith hallmark           222         300         180            234.00
+anna hallmark            222         111         211            181.33
+roxie hallmark           100         100           2             67.33
+
+Game Averages:        152.60      148.30      126.20
+
+The bowler with the highest average score was Peperment Patty with an average score of 248.00
+The bowler with the lowest average score was Marcey with an average score of 2.00
+
+Enter a bowler's name: Snoopy
+Snoopy had an average score of 233.33
+
+Sorted Arrays:
+
+Marcey                     1           2           3              2.00
+Charlie brown              1           2          12              5.00
+roxie hallmark           100         100           2             67.33
+Linus too good           100          23         210            111.00
+Red Headed Girl          123         222         111            152.00
+anna hallmark            222         111         211            181.33
+Pig Pen                  234         123         212            189.67
+Snoopy                   300         300         100            233.33
+keith hallmark           222         300         180            234.00
+Peperment Patty          223         300         221            248.00
+
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program takes in bowler scores from a file and prints them into a nicely formatted table." << endl;
+
+	//Initialize variables
+	ifstream infile;
+	ofstream outfile;
+	string bowlerNames[10];
+	double bowlerScores1[10] = { 0 };
+	double bowlerScores2[10] = { 0 };
+	double bowlerScores3[10] = { 0 };
+	double bowlerAverages[10] = { 0 };
+	double gameAverages[3] = { 0 };
+	int highestScoreIndex = 0;
+	int lowestScoreIndex = 0;
+	string searchName;
+
+	string *Names = bowlerNames;
+	double *Scores1 = bowlerScores1;
+	double *Scores2 = bowlerScores2;
+	double *Scores3 = bowlerScores3;
+	double *bAverages = bowlerAverages;
+	double *gAverages = gameAverages;
+
+	//Get the names and scores of the bowlers
+	infile.open("C:\\Users\\Erik\\OneDrive\\Documents\\Calhoun\\C++\\Data\\bowlers2.txt");
+	if (!infile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+
+	//Get data from file
+	for (int i = 0; i <= 9; i += 1)
+	{
+		getline(infile, *(Names + i));
+		infile >> *(Scores1 + i);
+		infile >> *(Scores2 + i);
+		infile >> *(Scores3 + i);
+		infile.ignore(100, '\n');
+	}
+	infile.close();
+
+	//Calculate each bowler's average score
+	for (int i = 0; i <= 9; i += 1)
+	{
+		double total = 0;
+		total += *(Scores1 + i);
+		total += *(Scores2 + i);
+		total += *(Scores3 + i);
+		*(bAverages + i) = total / 3;
+	}
+
+	//Find the bowler with the highest average score
+	for (int i = 0; i <= 9; i += 1)
+	{
+		if (*(bAverages + i) > *(bAverages + highestScoreIndex)) highestScoreIndex = i;
+	}
+
+	//FInd the bowler with the lowest average score
+	for (int i = 0; i <= 9; i += 1)
+	{
+		if (*(bAverages + i) < *(bAverages + lowestScoreIndex)) lowestScoreIndex = i;
+	}
+
+	//Calculate the average score for each game
+	double total = 0;
+	for (int i = 0; i <= 9; i += 1)		
+	{
+		total += *(Scores1 + i);
+	}
+	*(gAverages) = total / 10;
+
+	total = 0;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		total += *(Scores2 + i);
+	}
+	*(gAverages + 1) = total / 10;
+
+	total = 0;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		total += *(Scores3 + i);
+	}
+	*(gAverages + 2) = total / 10;
+
+	//Print bowlers and their scores
+	cout << fixed;
+	cout << setw(16) << left << "Bowler's Name:" << right << setw(12) << "Game 1:";
+	cout << setw(12) << "Game 2:" << setw(12) << "Game 3:" << setw(18) << "Bowler Average:" << endl << endl;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		//print bowler names
+		cout << setw(16) << left << *(Names + i);
+		//print bowler scores
+		cout << setprecision(0) << right;
+		cout << setw(12) << *(Scores1 + i);
+		cout << setw(12) << *(Scores2 + i);
+		cout << setw(12) << *(Scores3 + i);
+		//print bowler's average
+		cout << setw(18) << setprecision(2) << *(bAverages + i);
+		cout << endl;
+	}
+	cout << endl;
+
+	//Print the average score for each game
+	cout << setw(16) << left << "Game Averages:";
+	cout << setprecision(2) << right;
+	for (int i = 0; i <= 2; i += 1) cout << setw(12) << *(gAverages + i);
+	cout << endl << endl;
+
+	//Print the bowler with the highest average score
+	cout << left << "The bowler with the highest average score was ";
+	cout << *(Names + highestScoreIndex) << " with an average score of " << *(bAverages + highestScoreIndex) << endl;
+
+	//Print the bowler with the lowest average score
+	cout << left << "The bowler with the lowest average score was ";
+	cout << *(Names + lowestScoreIndex) << " with an average score of " << *(bAverages + lowestScoreIndex) << endl;
+	cout << endl;
+
+	//Ask for a bowler's name and print out their name and average score
+	cout << "Enter a bowler's name: ";
+	getline(cin, searchName);
+	for (int i = 0; i <= 9; i += 1)
+	{
+		if (searchName == *(Names + i)) cout << *(Names + i) << " had an average score of " << *(bAverages + i) << endl;
+	}
+
+	//Sort the bowlers by their average score, lowest to highest using bubblesort
+	double temp = 0;
+	string nameTemp = "";
+	for (int i = 0; i <= 9; i += 1)
+	{
+		for (int j = 0; j < 9; j += 1)
+		{
+			if (*(bAverages + j) > *(bAverages + j + 1))
+			{
+				//sort averages
+				temp = *(bAverages + j);
+				*(bAverages + j) = *(bAverages + j + 1);
+				*(bAverages + j + 1) = temp;
+				//sort scores
+				temp = *(Scores1 + j);
+				*(Scores1 + j) = *(Scores1 + j + 1);
+				*(Scores1 + j + 1) = temp;
+
+				temp = *(Scores2 + j);
+				*(Scores2 + j) = *(Scores2 + j + 1);
+				*(Scores2 + j + 1) = temp;
+
+				temp = *(Scores3 + j);
+				*(Scores3 + j) = *(Scores3 + j + 1);
+				*(Scores3 + j + 1) = temp;
+
+				//sort names
+				nameTemp = *(Names + j);
+				*(Names + j) = *(Names + j + 1);
+				*(Names + j + 1) = nameTemp;
+			}
+		}
+	}
+
+	//Print sorted array
+	cout << endl << "Sorted Arrays:" << endl << endl;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		//print bowler names
+		cout << setw(16) << left << *(Names + i);
+		//print bowler scores
+		cout << setprecision(0) << right;
+		cout << setw(12) << *(Scores1 + i);
+		cout << setw(12) << *(Scores2 + i);
+		cout << setw(12) << *(Scores3 + i);
+		//print bowler's average
+		cout << setw(18) << setprecision(2) << *(bAverages + i);
+		cout << endl;
+	}
+	cout << endl;
+
+	//Write the data to an HTML file, 
+	outfile.open("C:\\Users\\Erik\\OneDrive\\Documents\\Calhoun\\C++\\Data\\bowlers3.html");
+	if (!outfile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+	outfile << "<!DOCTYPE html><html>" << endl;
+	outfile << "<head><title>Assignment_32</title></head>" << endl;
+	outfile << "<body>" << endl;
+	outfile << "<table>" << endl;
+	outfile << "<tr><th>Bowler's Name</th><th>Game 1</th><th>Game 2</th><th>Game 3</th><th>Bowler's Average</th></tr>" << endl;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		outfile << "<tr>";
+		outfile << "<td>" << *(Names + i) << "</td>";
+		outfile << "<td>" << *(Scores1 + i) << "</td>";
+		outfile << "<td>" << *(Scores2 + i) << "</td>";
+		outfile << "<td>" << *(Scores3 + i) << "</td>";
+		outfile << "<td>" << *(bAverages + i) << "</td>";
+		outfile << "</tr>" << endl;
+	}
+	outfile << "</table>";
+	outfile << "</body>";
+	outfile << "</html>";
+	outfile.close();
+
+
+	return 0;
+}

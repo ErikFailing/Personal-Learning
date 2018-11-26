@@ -1,0 +1,128 @@
+Output:
+
+This program creates a goose class.
+
+Goose 1:
+Age:                              2
+Breed:                White Chinese
+Gender:                      Female
+Weight:                         9.4
+Country of Origin:            China
+
+Goose 2:
+Age:                              4
+Breed:                      African
+Gender:                        Male
+Weight:                        13.5
+Country of Origin:            Libya
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+
+using namespace std;
+
+class goose
+{
+	private:
+		double weight;
+		string breed;
+		int age;
+		string gender;
+	public:
+		string countryOfOrigin;
+
+		//Constructors
+		goose(double w, string b, int a, string g, string c)
+		{
+			weight = w;
+			breed = b;
+			age = a;
+			gender = g;
+			countryOfOrigin = c;
+		}
+		goose() {}
+
+		//Set methods
+		void setWeight(double w) 
+		{ 
+			weight = w;
+		}
+		void setBreed(string b)
+		{
+			breed = b;
+		}
+		void setAge(int a) 
+		{
+			age = a;
+		}
+		void setGender(string g) 
+		{
+			gender = g;
+		}
+
+		//Get methods
+		double getWeight()
+		{
+			return weight;
+		}
+		string getBreed() 
+		{
+			return breed;
+		}
+		int getAge()
+		{
+			return age;
+		}
+		string getGender()
+		{
+			return gender;
+		}
+
+};
+
+int main()
+{
+	//Print what this program does
+	cout << "This program creates a goose class." << endl;
+
+	//Initialize variables
+	goose g1;
+	goose g2(13.5, "African", 4, "Male", "Libya");
+	
+	//Fill g1 goose instance
+	g1.setAge(2);
+	g1.setBreed("White Chinese");
+	g1.setGender("Female");
+	g1.setWeight(9.4);
+	g1.countryOfOrigin = "China";
+
+	//Print out both goose classes
+	cout << endl << "Goose 1:" << endl;
+	cout << left << setw(20) << "Age: " << setw(15) << right << g1.getAge() << endl;
+	cout << left << setw(20) << "Breed: " << setw(15) << right << g1.getBreed() << endl;
+	cout << left << setw(20) << "Gender: " << setw(15) << right << g1.getGender() << endl;
+	cout << left << setw(20) << "Weight: " << setw(15) << right << g1.getWeight() << endl;
+	cout << left << setw(20) << "Country of Origin: " << setw(15) << right << g1.countryOfOrigin << endl;
+
+	cout << endl << "Goose 2:" << endl;
+	cout << left << setw(20) << "Age: " << setw(15) << right << g2.getAge() << endl;
+	cout << left << setw(20) << "Breed: " << setw(15) << right << g2.getBreed() << endl;
+	cout << left << setw(20) << "Gender: " << setw(15) << right << g2.getGender() << endl;
+	cout << left << setw(20) << "Weight: " << setw(15) << right << g2.getWeight() << endl;
+	cout << left << setw(20) << "Country of Origin: " << setw(15) << right << g2.countryOfOrigin << endl;
+	return 0;
+}
+

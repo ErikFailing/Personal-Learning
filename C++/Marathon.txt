@@ -1,0 +1,1403 @@
+Output:
+
+This program takes in a data set and calculates avg age, # females and avg female age.
+    1     2:28:48   25      Male             WILLIAM              MARTIN           NASHVILLE   TN
+    2     2:31:46   29      Male               DAVID              MARLEY            COLUMBUS   GA
+    3     2:32:29   30      Male             MICHAEL              DEASON          GLASGOW UK   UK
+    4     2:32:46   28      Male                MARK            HAMILTON          NEW ALBANY   IN
+    5     2:34:12   41      Male             RICHARD              KESSIO              TOLEDO   OH
+    6     2:38:53   36      Male              JUSTIN              TURNER           PENSACOLA   FL
+    7     2:40:21   37      Male                JOSH           WHITEHEAD             MADISON   AL
+    8     2:44:38   46      Male              JOSHUA              RAYMAN               TAMPA   FL
+    9     2:45:49   26      Male             ANTHONY                WITT         TERRE HAUTE   IN
+   10     2:49:04   24      Male               JASON              MILLER          BIRMINGHAM   AL
+   11     2:50:10   35      Male             MICHAEL               HORAN              GOSHEN   KY
+   12     2:50:34   38      Male               KEITH               HENRY          HUNTSVILLE   AL
+   13     2:50:52   41      Male                MATT            SEGEBART          WASHINGTON   IL
+   14     2:51:16   42      Male               WAYNE            NEWCOMBE            BLENHEIM   ON
+   15     2:51:26   30      Male                JUAN                SOTO         GAINESVILLE   GA
+   16     2:51:54   33    Female           JEANNETTE               FABER              PEGRAM   TN
+   17     2:52:15   22      Male               LUCAS             PRATHER             MAHOMET   IL
+   18     2:53:46   35      Male               BRIAN              KORODY          CINCINNATI   OH
+   19     2:54:57   30      Male               JAMES            SULLIVAN            MEDFIELD   MA
+   20     2:54:58   48      Male                 JIM             CLEMENS             MADISON   AL
+   21     2:54:58   21      Male               AARON                HILL           KNOXVILLE   TN
+   22     2:55:14   35      Male               RUSTY              BRANCH          CANTONMENT   FL
+   23     2:55:31   32      Male              NATHAN                KARY         MAPLE GROVE   MN
+   24     2:55:41   37      Male               ROWAN               JONES             WAVERLY   KY
+   25     2:55:56   31    Female             JUSTYNA          MUDY-MADER          HUNTSVILLE   AL
+   26     2:56:05   33      Male               CHRIS            MAHAFFEY           ODENVILLE   AL
+   27     2:56:07   33      Male              JARROD           QUINLIVAN             CLAYTON   NC
+   28     2:56:11   23    Female            FLORENCE                MOSE       GRAND PRAIRIE   TX
+   29     2:56:13   40      Male               DAVID              HOLDER         NOVA SCOTIA   CN
+   30     2:56:33   41      Male                ERIC            KUJAWSKI           PENSACOLA   FL
+   31     2:57:22   53      Male                PHIL               YOUNG        MURFREESBORO   TN
+   32     2:57:57   23      Male               JAMES              GRAHAM          BIRMINGHAM   AL
+   33     2:58:37   25    Female                KAIA             HAMPTON           LEXINGTON   KY
+   34     3:00:20   29    Female               ELENA                KIDD            HOMEWOOD   AL
+   35     3:00:24   31      Male              JOSHUA             MCCLUNG            HOMEWOOD   AL
+   36     3:02:46   34      Male               TIMBO             JENKINS           LEXINGTON   KY
+   37     3:02:55   41      Male              RONALD              MARTIN       ELIZABETHTOWN   KY
+   38     3:03:19   42      Male                CHAD            HARTMANN          EVANSVILLE   IN
+   39     3:03:40   29    Female            BRITTANY         LEUENBERGER         BLOOMINGTON   IN
+   40     3:03:47   33    Female               JENNY               VANCE           KNOXVILLE   TN
+   41     3:03:51   25      Male               GRANT           BATCHELOR        MURFREESBORO   TN
+   42     3:04:08   42      Male                JOHN              MCATEE           BRENTWOOD   TN
+   43     3:04:36   51      Male                 TIM              VINSON             MADISON   AL
+   44     3:06:08   52      Male                GARY            PLEASANT                GRAY   TN
+   45     3:06:35   22      Male               IEDEN            LECKENBY              HOOVER   AL
+   46     3:06:38   40      Male            JONATHAN            CHAPPELL      PEORIA HEIGHTS   IL
+   47     3:06:51   48      Male               BRUCE               EVANS          HUNTSVILLE   AL
+   48     3:06:52   36      Male             JEFFERY               YODER         BLOOMINGTON   IN
+   49     3:07:16   29      Male             MATTHEW                ROWE           OWENSBORO   KY
+   50     3:07:32   35      Male                RYAN             LEGASPI          LOUISVILLE   KY
+   51     3:08:01   17      Male                JOSE              RANGEL         SOUTH ELGIN   IL
+   52     3:08:56   39      Male              JOSEPH             PULLIAM           LEXINGTON   KY
+   53     3:08:59   37      Male              DANIEL              COONCE          COOKEVILLE   TN
+   54     3:09:11   26    Female               CAYLA             NOUSAIN          LIVINGSTON   AL
+   55     3:09:26   20      Male              GATLIN             HOLLAND          GARDENDALE   AL
+   56     3:09:54   48      Male              ROBERT             NIELSEN        JOHNSON CITY   TN
+   57     3:10:37   52      Male                JEFF               MIRES          GREENVILLE   IN
+   58     3:10:46   29      Male              DANIEL           SILLIVANT          HUNTSVILLE   AL
+   59     3:10:57   46      Male               CHUCK             BRANSON             HARVEST   AL
+   60     3:11:10   58      Male             MICHAEL              BEESON             CLEMSON   SC
+   61     3:11:22   44    Female               TRACI               FALBO         CHARLESTOWN   IN
+   62     3:11:29   43      Male                 TIM             GREGORY               ALCOA   TN
+   63     3:11:24   15      Male                  BO             RUTTENS          ST CHARLES   IL
+   64     3:11:44   42      Male            JEREMIAH               TATUM          COOKEVILLE   TN
+   65     3:11:45   37    Female             KRISTEN          VANVRANKEN        SILVER POINT   TN
+   66     3:11:53   20    Female            DANIELLE               FERRO         MOUNT BERRY   GA
+   67     3:13:06   28      Male             BRADLEY             PIERSON        MURFREESBORO   TN
+   68     3:13:08   28      Male                ZACK              TAYLOR          LOUISVILLE   KY
+   69     3:13:07   31      Male                KYLE             BOWLING          LOUISVILLE   KY
+   70     3:13:06   55      Male               DUANE            RICKETTS             CULLMAN   AL
+   71     3:13:13   27      Male              ANDREW               ZAPOR           KNOXVILLE   TN
+   72     3:13:28   32      Male                ERIC               VURVA              PEORIA   IL
+   73     3:13:38   34      Male              DUSTIN              DUTTON             MADISON   AL
+   74     3:13:47   53      Male               CHUCK              DENHAM         LOOKOUT MTN   TN
+   75     3:13:54   35      Male                 LEE               EVANS         ALBERTVILLE   AL
+   76     3:13:54   26      Male               BRIAN          SUTHERLAND        BLACK FOREST   CO
+   77     3:14:03   31      Male              STUART            MAKINSON          ALPHARETTA   GA
+   78     3:14:40   32      Male         CHRISTOPHER                 KEY          HUNTSVILLE   AL
+   79     3:14:47   30      Male                 BEN                WYNS   JACKSONVILLE BEAC   FL
+   80     3:14:49   41      Male               CASON                CONN           CLEVELAND   TN
+   81     3:15:24   41      Male              ROBERT            YOUNGREN   OWENS CROSS ROADS   AL
+   82     3:15:53   46      Male                SEAN                RYAN           NASHVILLE   TN
+   83     3:16:15   24    Female               BECKY           BATCHELOR        MURFREESBORO   TN
+   84     3:16:42   37      Male              THOMAS               ALIFF   PEACHTREE CORNERS   GA
+   85     3:16:42   48      Male             MICHAEL            CATANESE            MARIETTA   GA
+   86     3:17:23   42    Female             REBECCA             COOMBER             "SURREY RH8 9LP",
+   87     3:18:01   23    Female               MEGAN           BREITBACH          HUNTSVILLE   AL
+   88     3:18:19   25    Female           ALEXANDRA               ELLIS           PENSACOLA   FL
+   89     3:18:19   35      Male                ADAM            PRINCIPE          CANTONMENT   FL
+   90     3:18:31   45      Male             MATTHEW               BRASS            HOSCHTON   GA
+   91     3:19:14   37      Male              JOSEPH             WATKINS         FRENCH CAMP   MS
+   92     3:19:27   32      Male            JONATHAN                SPRY             HARVEST   AL
+   93     3:19:44   43      Male                ERIC           PATTERSON              ATHENS   AL
+   94     3:19:45   19    Female              HANNAH            CUTSHALL        JOHNSON CITY   TN
+   95     3:19:52   32      Male               CHRIS             RAMSDEN              ATHENS   AL
+   96     3:20:31   52    Female             MANDANA           MORTAZAVI            LEESBURG   VA
+   97     3:20:38   36      Male               SHAUN             TILLERY               LEEDS   AL
+   98     3:20:42   44      Male               FRANK               DUDEL          HUNTSVILLE   AL
+   99     3:21:05   40      Male                JOEL         FREYENHAGEN        HAMPTON COVE   AL
+  100     3:21:05   32    Female             SHANNON               BEALE              MOBILE   AL
+  101     3:21:16   48      Male                TODD             PARSONS          HUNTSVILLE   AL
+  102     3:21:36   29      Male               BRANT             WHEELER          COOKEVILLE   TN
+  103     3:21:40   28    Female            KRYSTINA              STONER              ATHENS   GA
+  104     3:21:51   17      Male                EVAN               LEWIS            KENNESAW   GA
+  105     3:22:00   32      Male               DAVID             MOULDER             MADISON   AL
+  106     3:22:11   47      Male               DAVID              DENARD          TRUSSVILLE   AL
+  107     3:22:42   37      Male                MIKE             SCHEETZ            PORTLAND   TN
+  108     3:22:42   25      Male              ANDREW              HEISER           NASHVILLE   TN
+  109     3:22:52   30      Male              ANDRES              ARDILA             HUNTLEY   IL
+  110     3:23:06   46      Male             ROMADEL           DELASALAS           DRUMMONDS   TN
+  111     3:23:10   39      Male                ANDY             SANDERS          GREENVILLE   MS
+  112     3:23:11   43      Male                JEFF           MOSHINSKY        MOUNT JULIET   TN
+  113     3:23:24   44      Male              MARCUS            LAVENDER        GORDONSVILLE   TN
+  114     3:23:29   44      Male                MIKE              KIMPLE                ROME   GA
+  115     3:23:31   67      Male             MALCOLM              OLIVER          MORRISTOWN   TN
+  116     3:24:12   49      Male                BRET            RANDOLPH         BEAVERCREEK   OH
+  117     3:24:05   29      Male                RYAN              MCCLAY            MABLETON   GA
+  118     3:24:06   27      Male               DAVID              REEVES            MABLETON   GA
+  119     3:24:24   26      Male                 KEN              KICKEL   BROADVIEW HEIGHTS   OH
+  120     3:24:15   35      Male             MICHAEL            STEHLING           GRAYSLAKE   IL
+  121     3:24:19   39      Male               DEREK                HYDE         OLD HICKORY   TN
+  122     3:24:30   43      Male                CARY              GUFFEY          BIRMINGHAM   AL
+  123     3:24:33   26    Female              LAUREN             DELFELD           MUNDELEIN   IL
+  124     3:24:35   40      Male             MICHAEL              RIEKER              PEORIA   IL
+  125     3:24:39   44      Male                PAUL              CANTEY              DECATU   GA
+  126     3:24:50   28      Male                CHAD               VILAS        INDIANAPOLIS   IN
+  127     3:24:49   40      Male                ERIC            CHARETTE          HUNTSVILLE   AL
+  128     3:24:49   27    Female              ASHLEE            ESKELSEN           OAK RIDGE   TN
+  129     3:24:54   34      Male                ERIC                GUTH      TRAVELERS REST   SC
+  130     3:25:16   27      Male         CHRISTOPHER               DAVIS        MURFREESBORO   TN
+  131     3:25:24   44    Female            MEREDITH               SMITH        ASHLAND CITY   TN
+  132     3:26:06   43      Male                JEFF               MUNDT        BLUE SPRINGS   MO
+  133     3:26:10   27    Female              KRISTA             KRAEMER            FRANKLIN   TN
+  134     3:26:05   42      Male                MIKE              BRIGGS          COOKEVILLE   TN
+  135     3:26:34   42      Male                DANA              CORBIN       LAWRENCEVILLE   GA
+  136     3:26:38   29      Male                JOHN              NEVELS          HUNTSVILLE   AL
+  137     3:27:10   44      Male               ROGER            ABRAMSON           BRENTWOOD   TN
+  138     3:27:08   56      Male            W. CRAIG              OSBORN             MADISON   AL
+  139     3:27:29   68      Male                 DAN              HARVEY          LAKE MILLS   WI
+  140     3:27:19   29      Male                IAIN              DEASON          HUNTSVILLE   AL
+  141     3:27:27   32      Male             TIMOTHY              DITMAN             MADISON   AL
+  142     3:27:44   38      Male              WESLEY            MCDONALD              ATHENS   TN
+  143     3:27:53   25      Male               COLBY           CHILDRESS          HUNTSVILLE   AL
+  144     3:28:06   38    Female               LAURA               BROCK             CULLMAN   AL
+  145     3:28:16   29    Female           CHRISTINA             PROCTOR              ATHENS   GA
+  146     3:28:26   41      Male               SCOTT               SMITH   EXCELSIOR SPRINGS   MO
+  147     3:28:32   48      Male                KOEN             RUTTENS          ST CHARLES   IL
+  148     3:28:35   37      Male                MARK               HAZEN           BRENTWOOD   TN
+  149     3:28:56   25      Male              ISIDRO       ARROYO-SOLANO              ATHENS   AL
+  150     3:29:10   49      Male               TERRY          PLICKEBAUM              HUDSON   IL
+  151     3:29:01   20      Male              JOSIAH            MITCHELL    LOOKOUT MOUNTAIN   GA
+  152     3:29:07   55      Male                 TIM              CROUCH         JOHNS CREEK   GA
+  153     3:29:03   23      Male                JOEY            BEMOWSKI          HUNTSVILLE   AL
+  154     3:29:10   44      Male              PHILIP             GRUWELL           NORTHPORT   AL
+  155     3:29:08   51      Male                JEFF             WEHLING         SPRINGFIELD   MO
+  156     3:29:10   43      Male                JEFF         VANBENDEGOM           MIDDLETON   WI
+  157     3:29:18   34    Female           CATHERINE            TORIELLO           PINE LAKE   GA
+  158     3:29:24   35      Male              STEVEN             FEATHER           MARYVILLE   TN
+  159     3:29:27   39      Male                WILL            BARNWELL          HUNTSVILLE   AL
+  160     3:29:27   36      Male             TIMOTHY                PITT                ARAB   AL
+  161     3:29:35   23      Male              LAYTON             DORSETT               TAMPA   FL
+  162     3:29:50   40      Male                DALE              WESSON              NEWNAN   GA
+  163     3:29:53   42      Male               BRYAN                JOBO            FRANKLIN   TN
+  164     3:29:59   34    Female               LAURA               HENRY         CHATTANOOGA   TN
+  165     3:30:07   31    Female            KIMBERLY           HUMPHRIES            RED BANK   TN
+  166     3:30:29   48      Male             MICHAEL               TOWNE                       OH
+  167     3:31:00   45      Male             RICHARD               RAWLS          HUNTSVILLE   AL
+  168     3:31:11   32      Male             MATTHEW              LENARZ        GRAND RAPIDS   MN
+  169     3:31:01   19      Male           J. BLAISE              STEELE   AUBURN UNIVERSITY   AL
+  170     3:31:02   54      Male              ROBERT              STEELE         SAN ANTONIO   TX
+  171     3:31:31   27    Female              MARTHA             SCHELER             CHICAGO   IL
+  172     3:31:29   37      Male             DERRICK                ROBY           OWENSBORO   KY
+  173     3:31:36   37      Male                MARK                DUNN           KNOXVILLE   TN
+  174     3:31:47   26      Male             MICHAEL             SCHULTZ             PARRISH   FL
+  175     3:31:47   55      Male                GREG             SCHULTZ             PARRISH   FL
+  176     3:31:43   49      Male                 TIM             HORVATH          HUNTSVILLE   AL
+  177     3:32:03   41      Male               DAVID              GIBSON           KINGSPORT   TN
+  178     3:32:44   55      Male                JOHN             KISSANE              ATHENS   GA
+  179     3:32:58   46      Male             MICHAEL             PICKENS               MASON   OH
+  180     3:33:06   38      Male              ROBERT            DORNBUSH             ATLANTA   GA
+  181     3:33:10   65      Male               WAYNE             HECKLER             MADISON   AL
+  182     3:33:11   43      Male               BRIAN          WOOLDRIDGE           BRENTWOOD   TN
+  183     3:33:29   31      Male            JONATHAN               PEETS         TERRE HAUTE   IN
+  184     3:33:25   38      Male                SEAN              SARVER              PEORIA   IL
+  185     3:33:41   41      Male         CHRISTOPHER           VISCOVICH             MADISON   AL
+  186     3:33:38   39      Male               DEREK             NORDMAN            HOSCHTON   GA
+  187     3:33:57   22      Male             DOUGLAS              TOTTEN             HANOVER   IN
+  188     3:34:03   29    Female               EMILY                SPRY             HARVEST   AL
+  189     3:34:18   54      Male               RANDY           MCFARLAND          HUNTSVILLE   AL
+  190     3:34:15   44      Male              MATHEW              ZENNER           BRENTWOOD   TN
+  191     3:34:29   64      Male              DANIEL              COONCE          COOKEVILLE   TN
+  192     3:34:19   53      Male                DIRK               HAYES        MURFREESBORO   TN
+  193     3:34:26   32      Male              NATHAN              FOWLER        JONESBOROUGH   TN
+  194     3:34:29   45      Male         CHARLES DAV             OVERTON          BATESVILLE   MS
+  195     3:34:32   51      Male              DONALD              HELLEN          HUNTSVILLE   AL
+  196     3:34:33   38      Male                ERIC              THOMAS          ADAMSVILLE   AL
+  197     3:34:33   41      Male             RUSSELL               SMITH        CARTERSVILLE   GA
+  198     3:34:43   38      Male               BRETT           ADDINGTON   OWENS CROSS ROADS   AL
+  199     3:34:40   41      Male             TATSUKI              KOYAMA           BRENTWOOD   TN
+  200     3:34:47   39    Female               KELLY            WIEDOWER        WATKINSVILLE   GA
+  201     3:35:00   42      Male                GREG              GILLUM           NASHVILLE   TN
+  202     3:35:03   45      Male                TREY               WHITT          BIRMINGHAM   AL
+  203     3:35:20   24      Male               JESSE              RIEKER              PEORIA   IL
+  204     3:35:38   43      Male             CHARLIE               ADAIR          TUSCALOOSA   AL
+  205     3:35:32   34      Male                ZACH          WHITKANACK            SHELBURN   IN
+  206     3:35:51   47      Male                JEFF              MORGAN               TONEY   AL
+  207     3:36:22   29      Male                ERIC              KACKER             ATLANTA   GA
+  208     3:36:36   35    Female                ANYA             GLUSZEK          HUNTSVILLE   AL
+  209     3:36:40   55      Male             STEPHEN              RUFFIN     SIGNAL MOUNTAIN   TN
+  210     3:36:49   64      Male               DAVID               JONES        MURFREESBORO   TN
+  211     3:36:44   57      Male                TONY             PEARSON             TRINITY   AL
+  212     3:37:11   20      Male              NATHAN                 HAY           DEMOPOLIS   AL
+  213     3:37:15   39      Male             MATTHEW             CASIANO          HUNTSVILLE   AL
+  214     3:37:23   44      Male               DAVID             MCMAHON            NORCROSS   GA
+  215     3:37:34   49      Male               BRETT               CAREY            LAWRENCE   KS
+  216     3:37:36   45      Male             SPENCER               GUIDA   OWENS CROSS ROADS   AL
+  217     3:37:53   49      Male                LUAI              TABBAL             MUSKEGO   WI
+  218     3:37:35   49      Male               KEVIN               KNAPP         LEES SUMMIT   MO
+  219     3:37:38   25      Male             ZACHARY               SPECK                PACE   FL
+  220     3:37:54   40      Male               DAVID              DUNCAN              BOGART   GA
+  221     3:38:05   43      Male             STANLEY               WNUCK             MADISON   AL
+  222     3:38:05   54      Male             JEFFREY               BROWN            MARIETTA   GA
+  223     3:38:31   36      Male               SCOTT             SANDLIN          HUNTSVILLE   AL
+  224     3:38:47   46    Female              SHERYL              DUMMER          HUNTSVILLE   AL
+  225     3:39:02   47      Male               AARON              MERCER         CHATTANOOGA   TN
+  226     3:39:01   17      Male                NOAH              ZIMMER             ACWORTH   GA
+  227     3:39:13   41      Male                 GUY          CHMIELESKI           ARRINGTON   TN
+  228     3:39:16   41    Female               KATHY            YOUNGREN   OWENS CROSS ROADS   AL
+  229     3:39:12   51      Male            LEOPOLDO        MORENO URIZA          HUNTSVILLE   AL
+  230     3:39:19   32      Male                ALEX               CLARK          HUNTSVILLE   AL
+  231     3:39:20   44    Female              MISSIE             GREGORY               ALCOA   TN
+  232     3:40:10   41      Male             RUSSELL             EDWARDS      HENDERSONVILLE   TN
+  233     3:40:20   34      Male               FRANK            VERDUCCI          BURLINGAME   CA
+  234     3:40:18   18      Male               SALIM              CHACON         ALBERTVILLE   AL
+  235     3:40:52   46    Female               SARAH            STARLING           KNOXVILLE   TN
+  236     3:40:51   51      Male               TRACY              YOTHER          COOKEVILLE   TN
+  237     3:41:03   69      Male              JOHNNY               GOODE          BIRMINGHAM   AL
+  238     3:41:03   43      Male              TRAVIS               SHOPE          COOKEVILLE   TN
+  239     3:41:13   52      Male                PHIL             MAUGHAN          TUSCALOOSA   AL
+  240     3:41:20   44      Male              MARTIN         SCHNEEKLOTH          HUNTSVILLE   AL
+  241     3:41:42   32      Male              JEREMY              ROGERS         ALBERTVILLE   AL
+  242     3:41:45   37    Female              KRISTY             MAXWELL           PENSACOLA   FL
+  243     3:42:43   38    Female              MEMORY                 NIX           MELBOURNE   FL
+  244     3:43:00   43    Female                SUZY              THOMAS            FRANKLIN   TN
+  245     3:43:04   36    Female                TAMI         CHRISTENSEN        LIBERTY LAKE   WA
+  246     3:43:04   32      Male                ERIC          WEATHERBEE           MARYVILLE   TN
+  247     3:43:12   41    Female           ELIZABETH              THOMAS           LEXINGTON   KY
+  248     3:43:26   40      Male                MATT               EVANS              DALTON   GA
+  249     3:43:19   46      Male                ERIC            BRONKALA           KNOXVILLE   TN
+  250     3:43:35   31      Male                RYAN             DONOVAN             MADISON   AL
+  251     3:43:39   52      Male             HOUSTON                WOLF             CORDOVA   TN
+  252     3:44:07   54      Male             GREGORY            GREENING         BEAVERCREEK   OH
+  253     3:44:21   29      Male                 BEN                KATZ           NASHVILLE   TN
+  254     3:44:30   36      Male              DANIEL              CARTER          HUNTSVILLE   AL
+  255     3:44:47   41      Male              EUGENE              MILLER           CLEVELAND   OH
+  256     3:44:36   44      Male                WALT              AUSTIN            MARIETTA   GA
+  257     3:44:55   16      Male              JAVIER           NISHIKAWA          HUNTSVILLE   AL
+  258     3:45:00   17      Male                JOSH               LEWIS            KENNESAW   GA
+  259     3:45:08   40    Female              ERINNE                DYER            TEGA CAY   SC
+  260     3:45:08   49      Male                 TIM            SHERIDAN          LOUISVILLE   KY
+  261     3:45:07   41      Male              RUSSEL               DIXON        FAYETTEVILLE   TN
+  262     3:45:14   46    Female               KATIE              OWENBY           LONE TREE   CO
+  263     3:45:40   47      Male              STEVEN                 ORR           PENSACOLA   FL
+  264     3:45:45   27    Female             CORTNEY             LANGDON          LOUISVILLE   KY
+  265     3:45:45   36    Female            JENNIFER             BRIGATI           MARYVILLE   TN
+  266     3:46:24   39      Male                 BOB           HENDRICKS             MILFORD   OH
+  267     3:46:12   43      Male              ARTHUR                 JUR           CLEVELAND   TN
+  268     3:46:20   29      Male             TRENTON            THOMPSON          HUNTSVILLE   AL
+  269     3:46:09   50      Male             MICHAEL               BAUML             ATLANTA   GA
+  270     3:46:07   23    Female               MARIA               ELBON           NASHVILLE   TN
+  271     3:46:27   39      Male               BRIAN             BEARDEN          FORT PAYNE   AL
+  272     3:46:16   35      Male               CRAIG             FINDLEY          PLAINFIELD   IN
+  273     3:46:26   38    Female                LEAH              COLVIN           NORTHPORT   AL
+  274     3:46:48   52      Male                JEFF               HAGER             MADISON   AL
+  275     3:46:54   36    Female               SUSAN             COCHRAN          TUSCALOOSA   AL
+  276     3:46:59   37      Male             MATTHEW               ELLIS          WINCHESTER   KY
+  277     3:46:59   63      Male               LARRY               BROWN          WINCHESTER   KY
+  278     3:47:15   27      Male                ALEX            THOMPSON          HUNTSVILLE   AL
+  279     3:47:35   30    Female               RENEE             JACKSON              ATHENS   GA
+  280     3:47:41   34    Female               GINNY           PATTERSON             LEBANON   TN
+  281     3:47:54   39      Male                JOHN           ZIELINSKI              QUINCY   MA
+  282     3:47:47   26    Female            MYTHREYI          MAHALINGAM          BIRMINGHAM   AL
+  283     3:47:51   49      Male               SCOTT           MCLELLAND         STATESVILLE   NC
+  284     3:48:07   30    Female             JESSICA          WHITKANACK            SHELBURN   IN
+  285     3:48:11   48      Male               KEVIN           ALBRITTON           KNOXVILLE   TN
+  286     3:48:51   37    Female            DANIELLE            HUSTOLES          TITUSVILLE   FL
+  287     3:49:31   30      Male           NATHANIEL               BROWN             MADISON   AL
+  288     3:48:52   32    Female                KACI               LANTZ           HERMITAGE   TN
+  289     3:48:48   34      Male               BRETT              HULGAN         ALBERTVILLE   AL
+  290     3:49:00   30      Male                CODY             BELLOMY          HUNTSVILLE   AL
+  291     3:48:59   26    Female             BRIDGET               DEETS         CLARKSVILLE   TN
+  292     3:49:03   61      Male               GLENN             GRAVITT          WINCHESTER   TN
+  293     3:49:07   40      Male               CRAIG               SMITH             MADISON   AL
+  294     3:49:14   46      Male               BRYAN              NORMAN               UNION   MS
+  295     3:49:22   48    Female               ROBYN              SNYDER           BRENTWOOD   TN
+  296     3:49:54   36      Male             WILLIAM           HOLLOWELL          TUSCALOOSA   AL
+  297     3:49:46   33      Male                MARK                ROWE           OWENSBORO   KY
+  298     3:49:57   27      Male                KYLE             KRAEMER            FRANKLIN   TN
+  299     3:49:55   23    Female              ELLERY              MILLER          HUNTSVILLE   AL
+  300     3:50:02   47    Female               VICKI              UPDIKE           BRENTWOOD   TN
+  301     3:50:11   35    Female            DANIELLE          MERIWETHER          LOUISVILLE   KY
+  302     3:50:09   29      Male                KYLE              STOKES          HUNTSVILLE   AL
+  303     3:50:33   53      Male               BENNY              PHIFER           TUSCUMBIA   AL
+  304     3:50:25   45      Male               JIMMY              STUCKY              AUBURN   AL
+  305     3:50:30   33      Male                 ELI              HASSID       NORTH POTOMAC   MD
+  306     3:50:35   41      Male              JEREMY               MCCOY            COLUMBIA   TN
+  307     3:50:35   33      Male              ANDREW          WISNIEWSKI             ANTIOCH   TN
+  308     3:50:40   17      Male                ALEC               LYONS              SMYRNA   GA
+  309     3:51:03   34    Female             MARILYN              CURTIS            FAIRVIEW   TN
+  310     3:51:29   33      Male            JONATHAN              IBARRA   OWENS CROSS ROADS   AL
+  311     3:51:54   36      Male               JASON             ROSSMAN             WALTHAM   MA
+  312     3:51:57   46    Female              TERRIE                WARD            MARIETTA   GA
+  313     3:51:49   29      Male              CONNOR             MCGOWAN         ALBERTVILLE   AL
+  314     3:52:01   41      Male                 ROB              GRAHAM      TARPON SPRINGS   FL
+  315     3:52:10   37    Female               SARAH              WALKER             MADISON   AL
+  316     3:52:13   38      Male            JONATHAN              REGETZ           KETCHIKAN   AK
+  317     3:52:37   26      Male             MATTHEW              ALDRED   E. SUSSEX BN22 0B
+  318     3:52:37   26      Male               DANNY             MCBRIDE         CHATTANOOGA   TN
+  319     3:52:44   24    Female               LYDIA          OSTERNDORF             MADISON   AL
+  320     3:52:45   24      Male               PARIS             BLEDSOE          LOUISVILLE   KY
+  321     3:52:39   50      Male                TONY                KING              ATHENS   AL
+  322     3:53:22   23    Female              JORDAN             NEWKIRK         CENTREVILLE   VA
+  323     3:52:38   42      Male                JOHN              CUSHMA            NORCROSS   GA
+  324     3:53:04   35      Male               RUSTY              MILLER            CHAMBLEE   GA
+  325     3:52:55   36      Male                ADAM               OLIVE           HARTSELLE   AL
+  326     3:53:09   33    Female             MICHELE             FISCHER               WAYNE   PA
+  327     3:53:18   24    Female               HALEY             HANCOCK          HUNTSVILLE   AL
+  328     3:53:01   50      Male              DARREN                EZZO          HUNTSVILLE   AL
+  329     3:53:13   26      Male             ANTHONY               MORSE             HARVEST   AL
+  330     3:53:03   34      Male              WARREN               LEWIS        JONESBOROUGH   TN
+  331     3:53:14   42    Female             REBECCA               BYERS       OWENS X ROADS   AL
+  332     3:53:14   33      Male              JORDAN                PAUL              ATHENS   AL
+  333     3:53:08   35      Male             MALCOLM           DAVENPORT          HUNTSVILLE   AL
+  334     3:53:16   46      Male              DARRON               EWING      HENDERSONVILLE   TN
+  335     3:53:05   37    Female               ANGIE               CLARK          COOKEVILLE   TN
+  336     3:53:11   36    Female              KANITA                REED              HOOVER   AL
+  337     3:53:14   25    Female            MEREDITH              HEISER           NASHVILLE   TN
+  338     3:53:20   66      Male                 PAT            O'ROURKE             HOLLAND   MI
+  339     3:53:35   46      Male                TODD               JONES              MICHIE   TN
+  340     3:53:18   30      Male             ZACHARY                KOCH          HUNTSVILLE   AL
+  341     3:53:29   32      Male                COLE            MORRISON          HUNTSVILLE   AL
+  342     3:53:33   41    Female              ALISON              NORRIS              ATHENS   GA
+  343     3:53:48   35    Female                ANNE           HARBARGER          HUNTSVILLE   AL
+  344     3:53:59   34      Male              ROBERT              HARRIS             HARVEST   AL
+  345     3:53:58   35      Male               JAMES           BARLAMENT              ATHENS   GA
+  346     3:54:19   37    Female              LAUREN                ZOOK           NASHVILLE   TN
+  347     3:54:34   58      Male                 JON            REYNOLDS        JOHNSON CITY   TN
+  348     3:54:43   41      Male                IZZY               GOULD      VESTAVIA HILLS   AL
+  349     3:55:01   48    Female                DEBI               SECOR              HOOVER   AL
+  350     3:55:06   19      Male              SAMUEL             SCRUGGS             JOELTON   TN
+  351     3:55:36   57      Male                TODD              OVERBY            GALLATIN   TN
+  352     3:55:42   54      Male             MATTHEW               SMITH          GREENVILLE   SC
+  353     3:55:46   38      Male               QUINN                HILL               LEEDS   AL
+  354     3:56:19   39      Male             MATTHEW             RHYNARD              DAYTON   OH
+  355     3:56:36   41      Male               CONAN             MOWBRAY            STERLING   VA
+  356     3:56:37   56      Male                BRET              BARLOW             ROSWELL   NM
+  357     3:56:57   32    Female               TALIA              DAHLKE       NEPTUNE BEACH   FL
+  358     3:56:48   37      Male                 TAG              CHOATE             MADISON   AL
+  359     3:57:26   47      Male                PAUL            BRASHIER             MADISON   AL
+  360     3:57:38   44    Female              TRACIE             WINTERS             SANFORD   FL
+  361     3:57:23   35    Female              PAMELA             GRESHAM         TERRE HAUTE   IN
+  362     3:57:26   35      Male              JOSEPH               MAGNI         PHENIX CITY   AL
+  363     3:57:24   55      Male               BRENT             SHERMAN          HUNTSVILLE   AL
+  364     3:57:33   49      Male               KEVIN             SIMPSON          BIRMINGHAM   AL
+  365     3:57:43   47      Male               SCOTT          RICHARDSON             MEDFORD   NJ
+  366     3:57:52   31    Female                ROSA               ESHOO            COLUMBUS   GA
+  367     3:57:39   49      Male                JOHN              ZARDIS      TELLICO PLAINS   TN
+  368     3:57:36   39      Male             TIMOTHY             LUEKING           UNDERWOOD   IN
+  369     3:58:03   31    Female            DANIELLE              HAINES         SPRING HILL   TN
+  370     3:58:01   42      Male                JOHN              VERNON           HAPEVILLE   GA
+  371     3:58:02   29    Female            ANDRIANA            PACHELLA             CHICAGO   IL
+  372     3:58:17   53      Male               MARTY              CLARKE          HUNTSVILLE   AL
+  373     3:58:10   43      Male              STEVEN                DUKE            HOMEWOOD   AL
+  374     3:58:08   42    Female                LISA               FISCH            FRANKLIN   TN
+  375     3:58:10   46    Female            MICHELLE              WALKER            NEWBURGH   IN
+  376     3:58:20   53      Male                JOHN                ROTH       OVERLAND PARK   KS
+  377     3:58:06   46      Male             RICHARD                POFF              PELHAM   AL
+  378     3:58:13   57      Male               DAVID               ZAJIC             DECATUR   AL
+  379     3:58:23   43    Female             ALLISON             STALVEY          COOKEVILLE   TN
+  380     3:58:32   37    Female             MELISSA           DAVENPORT          HUNTSVILLE   AL
+  381     3:58:24   43      Male                KRIS              STROPE             HARVEST   AL
+  382     3:58:23   31      Male                 IAN            PHILLIPS              ATHENS   AL
+  383     3:58:48   44      Male               BRIAN              TURNER        MURFREESBORO   TN
+  384     3:58:55   38    Female               KATIE           MAEHLMANN             MADISON   AL
+  385     3:59:06   63      Male               DAVID              BIXLER             HANOVER   PA
+  386     3:59:11   33    Female           CHRISTINA             SIMMONS          WINCHESTER   KY
+  387     3:59:04   46      Male               KELLY             MAHONEY          COOKEVILLE   TN
+  388     3:59:30   45    Female             MELISSA              BOOTHE             MADISON   AL
+  389     3:59:43   50    Female           CATHERINE               LUCAS            FRANKLIN   TN
+  390     3:59:55   33    Female              CHAVET             BRESLIN              DENVER   CO
+  391     4:00:09   42    Female              DENISE                 ELY             MADISON   AL
+  392     4:00:12   39      Male              NATHAN             COLLINS              HOOVER   AL
+  393     4:00:01   31      Male              EDWARD               WATTS          HUNTSVILLE   AL
+  394     4:00:20   49      Male                GREG              COLVIN             CYPRESS   TX
+  395     4:00:58   34    Female             JESSICA              HULGAN         ALBERTVILLE   AL
+  396     4:01:08   47      Male                MARK              WILSON           LEXINGTON   KY
+  397     4:01:38   39    Female             SHANNON               ALLEN          HUNTSVILLE   AL
+  398     4:01:34   49      Male            LAWRENCE              CARTER          CARROLLTON   GA
+  399     4:01:34   48      Male                JOHN               UPSON          CARROLLTON   GA
+  400     4:01:42   63      Male              JOSEPH              PETERS              COUNCE   TN
+  401     4:01:52   60      Male                JEFF                 LEE          HUNTSVILLE   AL
+  402     4:01:48   54      Male               LOREN               STARR             ATLANTA   GA
+  403     4:02:12   35      Male           SEBASTIAN                HUDD          BIRMINGHAM   AL
+  404     4:02:26   41      Male               JAMES            EDGECOMB             MADISON   AL
+  405     4:02:18   37    Female             MARICIA              PARKER              ATHENS   GA
+  406     4:02:54   49      Male                JEFF             DROBNEY             ACWORTH   GA
+  407     4:02:50   48      Male               JAMES            VARNAVAS             MADISON   AL
+  408     4:02:56   43      Male             WILLIAM             JOHNSON      OWENS CROSS RD   AL
+  409     4:03:20   42      Male             MATTHEW              DURDIN              AUBURN   AL
+  410     4:03:17   49    Female               JULIE               YOUNG           MARYVILLE   TN
+  411     4:03:47   31    Female              ANDREA             RENEGAR        MURFREESBORO   TN
+  412     4:03:39   35    Female             REBECCA            BRODHEAD             ROSWELL   GA
+  413     4:04:12   38    Female               SARAH             BECKMAN        MURFREESBORO   TN
+  414     4:04:11   33    Female             KANDICE              HAYNES           NASHVILLE   TN
+  415     4:04:33   40      Male              THOMAS               HAMER          HUNTSVILLE   AL
+  416     4:04:13   47      Male             PATRICK             JOHNSON              BISHOP   GA
+  417     4:04:25   46      Male               SHAWN               SMITH           BOONVILLE   IN
+  418     4:04:39   34    Female               SARAH           TORGERSEN             HARVEST   AL
+  419     4:04:47   29    Female                 ANA               BAKER          HUNTSVILLE   AL
+  420     4:04:39   43    Female             CRYSTAL       PRESTON-LLOYD           MCDONOUGH   GA
+  421     4:04:50   50    Female            KATHLEEN               WOODS             ATLANTA   GA
+  422     4:05:15   39      Male               GEOFF                COOK             ATLANTA   GA
+  423     4:05:12   35      Male              JUSTIN              HOWARD             QUITMAN   MS
+  424     4:05:13   35      Male                TODD            MCDONALD             MOULTON   AL
+  425     4:05:07   46      Male                LUIS           CRUZ-VERA          HUNTSVILLE   AL
+  426     4:05:09   50      Male               DAVID              BRYANT          TRUSSVILLE   AL
+  427     4:06:19   31    Female                TARA            ANDERSON              OXFORD   AL
+  428     4:06:13   37      Male               JARED             POINTER              OXFORD   AL
+  429     4:06:22   53      Male                JEFF               RABER          CINCINNATI   OH
+  430     4:06:17   40    Female               NICKI              HODGES               COMER   GA
+  431     4:06:11   33      Male             MICHAEL               MILLS           LEXINGTON   KY
+  432     4:06:30   43      Male             MICHAEL               DORIO      BETHEL SPRINGS   TN
+  433     4:06:36   28    Female           CATHERINE            THOMPSON              ATHENS   GA
+  434     4:06:45   30      Male              ANDREW               LOPEZ             HARVEST   AL
+  435     4:06:40   34    Female              AMANDA               PHARR         NOLENSVILLE   TN
+  436     4:06:50   57    Female              BROOKE              NELSON             MUNFORD   AL
+  437     4:06:48   49      Male                FRED              STUCKY          HUNTSVILLE   AL
+  438     4:06:57   37    Female           STEPHANIE           REITMEIER   OWENS CROSS ROADS   AL
+  439     4:07:02   45      Male               CHRIS          BRUNHOEBER          HUNTSVILLE   AL
+  440     4:07:24   38      Male               JASON              TIPTON           KINGSPORT   TN
+  441     4:07:15   38      Male                MARK             FREEMAN          HUNTSVILLE   AL
+  442     4:07:42   19    Female               MEGAN            MCDUFFEE          HUNTSVILLE   AL
+  443     4:07:25   59      Male               PERRY             GABBARD          ST CHARLES   MO
+  444     4:07:41   44      Male               BRIAN               TESKE       LAWRENCEVILLE   GA
+  445     4:07:38   48      Male                SHAR            HENDRICK          HUNTSVILLE   AL
+  446     4:07:40   34      Male             BRADLEY                DEAN          HUNTSVILLE   AL
+  447     4:07:51   46      Male                GREG               MORIN              BISHOP   GA
+  448     4:08:06   40    Female                KACI                NASH        COLLIERVILLE   TN
+  449     4:08:07   58      Male                 GUY             EDWARDS           DAHLONEGA   GA
+  450     4:08:18   51      Male               CHRIS               TALUC              MORTON   IL
+  451     4:08:04   57      Male              DANIEL               DIETZ            MARIETTA   GA
+  452     4:08:26   33    Female              AMANDA            WARRINER          ALEXANDRIA   VA
+  453     4:08:24   43    Female               LAURA            KOSTELNY          BIRMINGHAM   AL
+  454     4:08:22   34      Male              NATHAN           PATTERSON           GOLDSBORO   NC
+  455     4:08:25   32      Male             PATRICK             BUCKLEY          HUNTSVILLE   AL
+  456     4:08:46   35    Female               MEGAN               RICCI              POWELL   OH
+  457     4:09:00   55    Female              ELAINE           SILLIVANT          HUNTSVILLE   AL
+  458     4:09:01   53      Male               DAVID            HOLLIDAY          HUNTSVILLE   AL
+  459     4:09:20   29    Female             MELISSA               KLINE            LAVERGNE   TN
+  460     4:09:36   45    Female              ALISON               DOYLE          HUNTSVILLE   AL
+  461     4:09:17   19      Male             CAMERON              HARRIS    OWENS CROSSROADS   AL
+  462     4:09:36   32    Female               LINDA            SCAVARDA               TONEY   AL
+  463     4:09:28   57    Female             SUZANNE              DUVALL          LOUISVILLE   KY
+  464     4:09:38   29      Male               BRETT               WEMER          LOUISVILLE   KY
+  465     4:09:41   54    Female            PATRICIA             EMERSON          LANESVILLE   IN
+  466     4:10:09   31    Female              AMANDA             NEDELEC          CINCINNATI   OH
+  467     4:10:11   51      Male                MARK             MATTSON            FRANKLIN   TN
+  468     4:09:58   58      Male                 JIM             GIBBONS          SHARPSBURG   GA
+  469     4:10:11   56      Male               DAVID                NAST          HUNTSVILLE   AL
+  470     4:10:22   50    Female                 ANN              DUCHAC               TAMPA   FL
+  471     4:10:41   41    Female            COURTNEY             WAYLAND           LA GRANGE   KY
+  472     4:10:42   56    Female               SUSAN               ADAMS              ATHENS   GA
+  473     4:10:50   42    Female             CHRISTY               SCOTT   OWENS CROSS ROADS   AL
+  474     4:10:34   57      Male               KEVIN             CHAFFIN          VILLA RICA   GA
+  475     4:10:58   38    Female              JOHNNA               AGENT        PHILADELPHIA   MS
+  476     4:11:01   52      Male               BRIAN             SANCHEZ          MANAHAWKIN   NJ
+  477     4:11:32   46      Male               TERRY               JONES        JONESBOROUGH   TN
+  478     4:11:25   27    Female            JENNIFER              SETTLE           OWENSBORO   KY
+  479     4:11:24   38    Female               KELLY              POWERS           OWENSBORO   KY
+  480     4:11:24   43      Male               JASON              POWERS           OWENSBORO   KY
+  481     4:11:32   50      Male                 DON             LEOPARD         SPRINGVILLE   AL
+  482     4:11:34   27    Female                KARI         VRADENBURGH         CHATTANOOGA   TN
+  483     4:11:51   45      Male                TODD             SALADIN             "HEBRON KY",KY
+  484     4:12:02   66      Male              DONALD             LANGDON        WRIGHTSVILLE   GA
+  485     4:11:54   45      Male             KENNETH                ROSE       MUSCLE SHOALS   AL
+  486     4:12:03   53      Male             JEFFREY               PAYNE           KINGSPORT   TN
+  487     4:11:47   44    Female              ANDREA              ARNOLD             DECATUR   GA
+  488     4:11:50   41    Female            JENNIFER               SHOPE          COOKEVILLE   TN
+  489     4:11:50   53      Male               SCOTT             CLAFLIN   OWENS CROSS ROADS   AL
+  490     4:12:01   62      Male               DAVID                WOOD             ORLANDO   FL
+  491     4:12:21   53      Male              RONNIE              NELSON             MADISON   AL
+  492     4:12:24   17      Male              ANDREW              TAYLOR            OOLTEWAH   TN
+  493     4:12:35   34      Male                ADAM              TOMLIN            BESSEMER   AL
+  494     4:12:36   39      Male               DAVID              MILLER          BIRMINGHAM   AL
+  495     4:12:43   47      Male                MARK        BREIDENBAUGH              FOWLER   OH
+  496     4:12:37   20      Male              AUSTIN          GARRABRANT              UNICOI   TN
+  497     4:12:24   25      Male               SCOTT        KOMINKIEWICZ           NASHVILLE   TN
+  498     4:12:35   64      Male             KENNETH            HARKLESS            BESSEMER   AL
+  499     4:12:41   35    Female                AVAT            SHEKOOFA             RALEIGH   NC
+  500     4:13:07   51      Male                MIKE               SMITH          HUNTSVILLE   AL
+  501     4:12:53   57      Male              GERALD             TARLTON         GREENEVILLE   TN
+  502     4:13:37   37    Female                FRAN             COLEMAN              FULTON   MS
+  503     4:13:49   52    Female            KATHLEEN              OCCENA            COLUMBIA   MO
+  504     4:13:24   14      Male              CONNOR               OWENS           KNOXVILLE   TN
+  505     4:13:25   45      Male                TONY               OWENS           KNOXVILLE   TN
+  506     4:13:33   34    Female                RUTH              DOWNEY            ANNISTON   AL
+  507     4:13:38   46    Female              APARNA             VIJAYAN            MARTINEZ   GA
+  508     4:13:43   36      Male               SCOTT            MCKINNON            FLORENCE   AL
+  509     4:14:04   34      Male               SCOTT               BOSMA            NEWBURGH   IN
+  510     4:13:45   34      Male             MICHAEL                HOLL          PRATTVILLE   AL
+  511     4:13:59   54      Male                MARK             HILLING         CHATTANOOGA   TN
+  512     4:13:41   74      Male                 KEN              BREWER              OXFORD   AL
+  513     4:13:53   28    Female            SAVANNAH            SIELBECK           NASHVILLE   TN
+  514     4:14:34   36    Female                ERIN                RALL           KINGSPORT   TN
+  515     4:14:36   32    Female               KERRI             WILIAMS           TUSCUMBIA   AL
+  516     4:14:42   34    Female            COURTNEY              CURTIS             MADISON   AL
+  517     4:14:34   45      Male              RONNIE            HARBISON           ALABASTER   AL
+  518     4:14:45   36    Female                LYNN               AKINS              DENVER   CO
+  519     4:14:54   40      Male              HARLAN               CLARK             ACWORTH   GA
+  520     4:14:44   30    Female            ROSEMARY            HILLIARD         MCMINNVILLE   TN
+  521     4:14:58   55      Male               HENRY             NOBREGA          HUNTSVILLE   AL
+  522     4:15:14   43      Male               BARRY               CASEY           ALABASTER   AL
+  523     4:15:27   50      Male             TIMOTHY               KEYES             MADISON   AL
+  524     4:15:49   48      Male                ALAN             LOVEMAN                ROME   GA
+  525     4:16:01   41      Male               SCOTT                CASH           BRENTWOOD   TN
+  526     4:16:17   35      Male               STEVE             GRISSOM             HARVEST   AL
+  527     4:16:13   38      Male                LUIS              CORTEZ             HARVEST   AL
+  528     4:16:18   43      Male         JEANPHILIPP             GUINDON            COLUMBUS   MS
+  529     4:16:13   44      Male               AARON              THOMAS              RANGER   GA
+  530     4:16:13   54      Male         LANCE ROBER              ASHLEY          SCOTTSBURG   IN
+  531     4:16:27   48      Male               SCOTT         HEINTZELMAN            COLUMBUS   NJ
+  532     4:16:51   45      Male              CARTER               WELLS          HUNTSVILLE   AL
+  533     4:16:50   31    Female              ASHLEY             LINARES             MADISON   AL
+  534     4:16:40   42      Male                 JIM            OPALESKI             ACWORTH   GA
+  535     4:16:41   44      Male                JOHN           SMALLWOOD             ACWORTH   GA
+  536     4:17:18   41      Male                ERIK            BRANDSMA        PHILADELPHIA   PA
+  537     4:16:46   17      Male                 SAM                RICE          HUNTSVILLE   AL
+  538     4:17:03   41    Female                 JOY              MARTIN             MADISON   AL
+  539     4:16:48   35      Male             BARRETT              HOLDER        FAYETTEVILLE   TN
+  540     4:17:15   48    Female               KEENA           CORNELIUS           TULLAHOMA   TN
+  541     4:17:17   39      Male              DANIEL             HOPKINS             HARVEST   AL
+  542     4:17:20   22    Female            BRITTANY            HENDRICK          MONTGOMERY   AL
+  543     4:17:33   48      Male                 TIM          KUYKENDALL           KINGSPORT   TN
+  544     4:17:14   41      Male              ROBERT             HANCOCK          CINCINNATI   OH
+  545     4:17:15   47      Male                MIKE               CROWE       BOWLING GREEN   KY
+  546     4:17:23   62      Male               JERRY               KEITH          BIRMINGHAM   AL
+  547     4:17:24   54      Male                BRAD               PIGUE             MADISON   TN
+  548     4:17:52   39      Male                RYAN             CASSELL             SEWANEE   TN
+  549     4:17:41   59    Female              TERESA           LINDAMOOD         BLOUNTVILLE   TN
+  550     4:17:48   38    Female             JESSICA            CHITWOOD             HARVEST   AL
+  551     4:17:55   44      Male              JOSHUA              BARNES               TAMPA   FL
+  552     4:18:03   38    Female               JANET             POLLINA            MARIETTA   GA
+  553     4:17:51   51    Female               SUSAN          BUCKINGHAM            HOMEWOOD   AL
+  554     4:17:57   39      Male             TERRELL            JENNINGS           JONESBORO   AR
+  555     4:18:13   21    Female           ELIZABETH              FORTIN             MEMPHIS   TN
+  556     4:18:35   32    Female              LESLIE             HARWELL             TRENTON   TN
+  557     4:18:38   50      Male             DOUGLAS             SCHUETZ          HUNTSVILLE   AL
+  558     4:18:35   56      Male             L DAVID             JOHNSON             JACKSON   TN
+  559     4:19:08   32    Female              CLAIRE               BOSMA            NEWBURGH   IN
+  560     4:19:09   32      Male              HUNTER            BRIDWELL            BESSEMER   AL
+  561     4:19:10   36    Female             HEATHER             SCULLEN             OPELIKA   AL
+  562     4:19:12   48      Male           JEFFERSON               CLARK        WHITE PLAINS   MD
+  563     4:19:20   24    Female               KATIE          FITZGERALD          HUNTSVILLE   AL
+  564     4:19:18   55      Male              DUSTIN               DRAKE          HUNTSVILLE   AL
+  565     4:19:47   26    Female             FARMEGA            BUCHANAN              ATHENS   AL
+  566     4:19:49   50    Female            ROSEMARY               MOORE          BIRMINGHAM   AL
+  567     4:20:09   24    Female           LEIGH-ANN             BAMBERG              CALERA   AL
+  568     4:19:58   58    Female               JAMIE                CLAY             MADISON   AL
+  569     4:20:00   29    Female              AMANDA             MOLINAR           NASHVILLE   TN
+  570     4:19:55   39    Female             CHRISTY               RUBLE             MADISON   AL
+  571     4:19:45   39    Female             ADRIANA           MARSHBURN      PEACHTREE CITY   GA
+  572     4:19:48   30      Male                RYNE              STOKES            COLUMBUS   GA
+  573     4:19:52   55      Male                 STU             FISCHER            LAGRANGE   KY
+  574     4:20:32   36    Female               STACY              DESOTO            FRANKLIN   TN
+  575     4:20:22   46    Female              JENNIE              GENTRY         CHATTANOOGA   TN
+  576     4:20:18   55      Male                MARK            HOLLOWAY               TIGER   GA
+  577     4:20:45   24      Male               MICAH             DOUTHIT             MADISON   AL
+  578     4:21:26   26    Female               ELLIE           LINDSTROM          HUNTSVILLE   AL
+  579     4:21:23   46    Female               TRISH              NEWSOM         SODDY DAISY   TN
+  580     4:21:50   46    Female               STACY        SOLLENBERGER            MARIETTA   GA
+  581     4:21:41   50      Male                GARY             BALLARD          NEW MARKET   AL
+  582     4:21:48   42    Female                 ANN             TARRANT            FALMOUTH   MA
+  583     4:22:19   42      Male             QUITMAN              TURNER   OWENS CROSS ROADS   AL
+  584     4:22:28   53      Male               STEVE             HAMMOND             MADISON   AL
+  585     4:22:42   56    Female               CINDY             SCHMITZ            HIGHLAND   CA
+  586     4:22:32   51      Male              RODNEY               SMITH          CARROLLTON   GA
+  587     4:22:42   45      Male              RONALD            ANDERSON            LEESBURG   VA
+  588     4:22:46   58      Male               KEITH             CUMMINS            LAGRANGE   KY
+  589     4:23:17   27    Female             JESSICA             WEBSTER               SYLVA   NC
+  590     4:22:59   55      Male                PAUL             FREEMAN      CORPUS CHRISTI   TX
+  591     4:23:04   29      Male                NEAL             ALLGOOD             MADISON   AL
+  592     4:23:05   45      Male                MIKE             MULLINS         MCMINNVILLE   TN
+  593     4:23:23   26    Female              LAUREN             COLLINS           BRENTWOOD   TN
+  594     4:23:10   68      Male              DONALD                NIMS             GLASGOW   KY
+  595     4:23:27   38    Female               JAMIE             MURDOCK          COOKEVILLE   TN
+  596     4:23:26   35    Female               JANET              COONCE          COOKEVILLE   TN
+  597     4:23:05   36      Male                MATT             FULLONE             MADISON   AL
+  598     4:23:15   51      Male                MARK            CRISWELL             WARRIOR   AL
+  599     4:23:25   41    Female             LADONNA            COALBURN             WARRIOR   AL
+  600     4:23:37   43    Female                 AMY              TANNER    OWENS CROSSROADS   AL
+  601     4:23:02   34      Male              DUSTIN          SHINHOLSER              ATHENS   GA
+  602     4:23:53   33    Female             JILLIAN              HARVEY              HOOVER   AL
+  603     4:23:21   48    Female                 EUN              GALVIN            MARIETTA   GA
+  604     4:23:54   31      Male              KURTIS               AARON              HAYDEN   AL
+  605     4:23:54   36      Male               JAMES               AARON             CULLMAN   AL
+  606     4:23:51   32      Male              ANDREW               ISLEY          HUNTSVILLE   AL
+  607     4:23:32   45      Male                 KEN                WARD              DALLAS   GA
+  608     4:23:49   50      Male                TODD           SINGLETON       LAWRENCEVILLE   GA
+  609     4:23:52   55      Male                DOUG             CARRELL      SALT LAKE CITY   UT
+  610     4:23:49   29    Female               ELLEN             SLIKKER         CHATTANOOGA   TN
+  611     4:24:03   36      Male                PAUL             LLANTIN          HUNTSVILLE   AL
+  612     4:24:44   52      Male               PERRY          CHURCHWELL                ROME   GA
+  613     4:24:37   24    Female              ASHLEY               BLOCK              ATHENS   GA
+  614     4:24:47   46      Male                KIRK              FINLEY          BROWNSBORO   AL
+  615     4:25:04   37    Female               JENNY           ZARICHNAK              HOOVER   AL
+  616     4:25:04   38    Female              ASHLEY            CALDWELL              HOOVER   AL
+  617     4:25:00   27      Male                BENJ               LANCE            DELLROSE   TN
+  618     4:25:01   43      Male                CARY                LONG          HUNTSVILLE   AL
+  619     4:24:48   43    Female             BELINDA           SNELLINGS         ALBERTVILLE   AL
+  620     4:24:45   53      Male               BILLY              LAWLEY           ALABASTER   AL
+  621     4:24:52   62      Male                RICK            STOCKTON              HOOVER   AL
+  622     4:25:22   72    Female              INGRID      CANTARELLA-FOX               WAYNE   PA
+  623     4:25:30   52      Male                PAUL              VARIAN               TONEY   AL
+  624     4:25:27   33    Female                TONI             CASSIDY               TONEY   AL
+  625     4:25:18   36      Male              ANDREW               EVANS   OWENS CROSS ROADS   AL
+  626     4:26:12   31    Female             JESSICA              HARTER           LA VERGNE   TN
+  627     4:26:41   32    Female             LINDSEY            HAUSMANN              NEWNAN   GA
+  628     4:26:20   38      Male                 BEN                HALL        WATKINSVILLE   GA
+  629     4:26:37   54      Male               STEVE           HUNNICUTT              NEWNAN   GA
+  630     4:27:43   53      Male                MATT            BUCKELEW             MADISON   AL
+  631     4:26:50   60      Male               TOMMY             NICHOLS         ROCK SPRING   GA
+  632     4:26:45   53      Male               MITCH               MOORE           MARYVILLE   TN
+  633     4:27:16   39      Male                ERIC               KOUGH           GAMBRILLS   MD
+  634     4:27:42   37    Female              STACEY             MALECKY         CHATTANOOGA   TN
+  635     4:27:11   30      Male                WILL               OGLES              ATHENS   AL
+  636     4:27:12   60      Male               HARRY            RICHARDS        BURTONSVILLE   MD
+  637     4:27:17   48      Male              DONALD              HARPER           CAMP HILL   PA
+  638     4:27:25   37    Female              ELAINE          STRICKLAND           NORTHPORT   AL
+  639     4:27:42   37    Female               DONNA                RUIZ          HUNTSVILLE   AL
+  640     4:27:41   62      Male                JOHN          ZINGARELLI          HUNTSVILLE   AL
+  641     4:27:47   39      Male                ALEX              OKLAND        INDIANAPOLIS   IN
+  642     4:27:56   36      Male              RANJAN               MEHTA             MADISON   AL
+  643     4:28:08   42    Female                TYRA               BYERS        WATKSINVILLE   GA
+  644     4:28:38   26      Male              TAYLOR              HINKLE          HUNTSVILLE   AL
+  645     4:28:18   51      Male                MARK                KEMP          SNELLVILLE   GA
+  646     4:28:38   47      Male                SEAN               ROHEN        INDIANAPOLIS   IN
+  647     4:29:03   29      Male                KYLE              WAGNER          HUNTSVILLE   AL
+  648     4:28:47   38      Male                J.P.           MARANZANI           FAIR LAWN   NJ
+  649     4:28:40   44      Male              LESLIE          MONTGOMERY           KINGSPORT   TN
+  650     4:29:03   52      Male                PAUL              PUTNAM           HERMITAGE   TN
+  651     4:29:09   46    Female            STEFANIE           GREENLEAF          HUNTSVILLE   AL
+  652     4:29:02   42    Female               KAREN              KNIGHT          HUNTSVILLE   AL
+  653     4:29:04   54      Male               JAMIE              MILLER          HUNTSVILLE   AL
+  654     4:29:08   42      Male             CHARLES               CLARK            GALLOWAY   NJ
+  655     4:29:14   49      Male                 JIM           SLAUGHTER          HUNTSVILLE   AL
+  656     4:29:43   55    Female               DIANA              BIBEAU           HERMITAGE   TN
+  657     4:29:53   57      Male              RONALD             WOODALL             DECATUR   AL
+  658     4:29:32   52      Male              MARVIN            WHITAKER             MADISON   AL
+  659     4:29:40   27    Female               ARIEL              HACKER    MILLIGAN COLLEGE   TN
+  660     4:29:49   45      Male                KYLE                ROBB            GALLATIN   TN
+  661     4:30:13   30    Female             BRIANNE           STAMBAUGH         CHATTANOOGA   TN
+  662     4:30:26   33    Female                ERIN              BALLOU       BOWLING GREEN   KY
+  663     4:30:04   29      Male              CONNER                HALL        JOHNSON CITY   TN
+  664     4:30:25   31      Male             STEPHEN               DAVIS        GUNTERSVILLE   AL
+  665     4:30:31   33      Male              JOSHUA             ROBBINS          HUNTSVILLE   AL
+  666     4:31:05   19    Female               EMILY               WOODS             MADISON   AL
+  667     4:31:05   18    Female           ELIZABETH               LOPEZ             MADISON   AL
+  668     4:31:04   34    Female              AMANDA               WHITE           LAFAYETTE   TN
+  669     4:31:03   55      Male               GRANT           GLASSFORD           BRENTWOOD   TN
+  670     4:31:35   34      Male               BYRON               PAYNE         CHATTANOOGA   TN
+  671     4:31:16   44      Male               BOBBY            WOODRUFF          HUNTSVILLE   AL
+  672     4:31:47   41      Male            LAURENCE              TOPPER           EDGEWORTH   PA
+  673     4:32:20   38      Male               BRIAN            TRIPLETT              OXFORD   AL
+  674     4:31:48   36      Male               TOMMY             STARKEY        MURFREESBORO   TN
+  675     4:31:51   55      Male                PAUL               IRWIN          MARYSVILLE   OH
+  676     4:32:03   39      Male               SCOTT              SETTLE          BIRMINGHAM   AL
+  677     4:32:34   49      Male               RANDY              PARDUE             MADISON   AL
+  678     4:31:55   38      Male               KEVIN               KIRBY        GUNTERSVILLE   AL
+  679     4:32:31   50      Male               CHUCK                 MAY          HUNTSVILLE   AL
+  680     4:32:17   47      Male               LANCE              HOENIG          SPRINGVALE   ME
+  681     4:32:33   38    Female               LEIGH              BARLOW           NORTHPORT   AL
+  682     4:32:32   42      Male              NATHAN                JUDD           CLEVELAND   TN
+  683     4:33:00   44      Male               DAVID              MCCRAY          WHITESBURG   GA
+  684     4:32:35   64      Male                MIKE               YATES              GURLEY   AL
+  685     4:33:03   52      Male             KENNETH              MASTER         HADDONFIELD   NJ
+  686     4:32:50   42    Female            MICHELLE             MORRING             CULLMAN   AL
+  687     4:32:52   51    Female                SESI              OGUNBI          MONTGOMERY   AL
+  688     4:33:26   40    Female            MICHELLE             NUCHOLS           MARYVILLE   TN
+  689     4:33:17   41      Male                TODD              FRITTS      MOUNT PLEASANT   TN
+  690     4:33:45   34    Female                GIGI              SANTOS           MARYVILLE   TN
+  691     4:33:55   18    Female               SARAH               LOPEZ             MADISON   AL
+  692     4:33:30   45      Male              TAYLOR              DENARD          TRUSSVILLE   AL
+  693     4:34:00   46      Male                RAVI           ARADHYULA           BRENTWOOD   TN
+  694     4:34:19   44      Male               CHRIS              HANVEY              JASPER   AL
+  695     4:33:59   45    Female             YOUNGSU                 HOY          HUNTSVILLE   AL
+  696     4:34:05   60      Male                JACK              TUCKER                EADS   TN
+  697     4:34:04   49      Male         CHRISTOPHER              MILLER          HUNTSVILLE   AL
+  698     4:34:10   57      Male             KENNETH             COLLINS              ATHENS   GA
+  699     4:34:19   22      Male              GUNNAR            MAGNUSON              AUBURN   AL
+  700     4:34:13   27      Male                NICK            LOCKHART          HUNTSVILLE   AL
+  701     4:34:22   46    Female               KAREN            WHITLOCK             LILBURN   GA
+  702     4:34:38   52    Female              VICKIE              VARNES           PELL CITY   AL
+  703     4:34:43   63      Male                JOHN            FERGUSON      ALEXANDER CITY   AL
+  704     4:34:41   41      Male               TOMMY             BARROWS           PELL CITY   AL
+  705     4:34:36   48      Male               SHAWN              CHANCE        MURFREESBORO   TN
+  706     4:34:57   32    Female               EMILY             HOCKMAN           KNXOVILLE   TN
+  707     4:34:53   44      Male                CHAD               WOODS          HUNTSVILLE   AL
+  708     4:35:18   38    Female               BETSY               PRESS          JANESVILLE   WI
+  709     4:35:02   62      Male                 ROY            THOMPSON        MURFREESBORO   TN
+  710     4:35:36   38    Female                 JAN              LAWLEY             MADISON   AL
+  711     4:36:04   54      Male               DAVID              CLOUGH                LULA   GA
+  712     4:35:45   40      Male                KRIS                DELK           JAMESTOWN   TN
+  713     4:35:45   29    Female               KAYLA                DELK         GREENEVILLE   TN
+  714     4:35:45   33      Male               KEVIN                DELK         GREENEVILLE   TN
+  715     4:35:41   50      Male                ADAM              GRIMES              AURORA   CO
+  716     4:35:49   58    Female             BOONSOM             HARTMAN          OAK FOREST   IL
+  717     4:36:15   33    Female             LINDSEY               LAYNE         BELL BUCKLE   TN
+  718     4:36:15   27    Female                AMIE               WISER        MURFREESBORO   TN
+  719     4:36:06   42    Female                LISA            RUTLEDGE             ONEONTA   AL
+  720     4:36:44   37      Male               JACOB            STERLING          HUNTSVILLE   AL
+  721     4:36:38   40      Male              JEREMY              HOUDEN            "T4B 3A4 CANADA",AB
+  722     4:36:08   28    Female                 AMY          RICHARDSON          HUNTSVILLE   AL
+  723     4:36:23   21      Male              TAYLOR              THOMAS          TUSCALOOSA   AL
+  724     4:36:40   72      Male                MARK               PITTS        INDIANAPOLIS   IN
+  725     4:36:44   33    Female               TERRI            RAGSDALE          CARROLLTON   GA
+  726     4:36:52   54      Male                JOEL              SOWDER          SOMERVILLE   AL
+  727     4:36:24   48    Female            SHARINNE               SEARS             MADISON   AL
+  728     4:36:41   63      Male                TONY              RECKER           HERMITAGE   TN
+  729     4:36:49   44    Female                 KAY              WILSON       SURGOINSVILLE   TN
+  730     4:36:49   68      Male               JIMMY               JONES         ROGERSVILLE   TN
+  731     4:36:43   48      Male             PATRICK               BROCK             CULLMAN   AL
+  732     4:37:01   26      Male              DANIEL               SPECK    LOOKOUT MOUNTAIN   GA
+  733     4:36:51   50      Male               DAVID             PERSSON             ACWORTH   GA
+  734     4:37:13   39    Female               STACY              OKLAND        INDIANAPOLIS   IN
+  735     4:37:03   24    Female           CHRISTINE             GARRETT              AUBURN   AL
+  736     4:37:10   32    Female              RACHEL               WELLS          MANCHESTER   TN
+  737     4:37:04   41    Female                DANA             OVERTON         ALBERTVILLE   AL
+  738     4:37:11   55    Female              TAMMIE               BOYTE          MANCHESTER   TN
+  739     4:37:37   54    Female               LINDA              AMBARD                HAFB   MA
+  740     4:37:13   39    Female            SHEELAGH            O'MALLEY             ATLANTA   GA
+  741     4:37:37   43      Male             TIMOTHY                ZANE          HUNTSVILLE   AL
+  742     4:37:35   39    Female              SHARON               SMITH         NOLENSVILLE   TN
+  743     4:37:34   34    Female              GINGER             HUFFMAN             MADISON   AL
+  744     4:37:35   52      Male              DWAYNE             HAWKINS        MURFREESBORO   TN
+  745     4:37:58   27    Female            JENNIFER             MARSTON          LOUISVILLE   KY
+  746     4:38:05   34      Male             MATTHEW             WOOLSEY   OWENS CROSS ROADS   AL
+  747     4:38:12   58      Male            JONATHAN           DOUGHERTY             MEMPHIS   TN
+  748     4:38:09   58      Male                 BOB            GINGRICH           FALKVILLE   AL
+  749     4:38:39   25    Female            MICHELLE             HAMMOND             MADISON   AL
+  750     4:38:28   54      Male               PETER                LEAP          MARBLEHEAD   MA
+  751     4:38:18   48    Female               DIANA               YOUNG         CENTERVILLE   GA
+  752     4:38:18   51      Male                ARON               YOUNG         CENTERVILLE   GA
+  753     4:38:32   54    Female               SUSAN             WARWICK          WILMINGTON   NC
+  754     4:38:45   66      Male              DENNIS               ROACH            MARIETTA   GA
+  755     4:38:38   56      Male               CHRIS               RATHS          SUCCASUNNA   NJ
+  756     4:38:44   46      Male                DEAN            PHILLIPS            FRANKLIN   TN
+  757     4:38:42   24    Female           CHRISTINA              ZEGLER        JACKSONVILLE   FL
+  758     4:38:40   44      Male                CARL          MANKIEWICZ        DANIELSVILLE   GA
+  759     4:39:22   44    Female           KATHERINE              BUKOLT    COLORADO SPRINGS   CO
+  760     4:38:45   45    Female               MISSY             ELLIOTT         CHATTANOOGA   TN
+  761     4:38:48   51      Male                GARY            VALLANCE         PALOS HILLS   IL
+  762     4:39:09   37      Male             MATTHEW                KYLE              ATHENS   AL
+  763     4:39:47   44      Male               JERRY              ABBOTT          NEW MARKET   AL
+  764     4:39:31   55      Male               STEVE            ROBINSON      ALEXANDER CITY   AL
+  765     4:39:48   30    Female                 AMY           FREDERICK         CLARKSVILLE   TN
+  766     4:39:31   31      Male                 JON                BAND             MADISON   AL
+  767     4:39:45   28      Male                RYAN             HYDRICK              ATHENS   AL
+  768     4:39:34   46    Female                 KIM              BENNER          BIRMINGHAM   AL
+  769     4:39:35   50    Female             MICHELE              WILSON           HARTSELLE   AL
+  770     4:39:58   48      Male               SCOTT               YOUNG            BARTLETT   TN
+  771     4:40:37   44      Male               SCOTT              BREWER              OXFORD   AL
+  772     4:40:21   27    Female              MAGGIE             COMPTON          BIRMINGHAM   AL
+  773     4:40:31   41      Male             MICHAEL             KOPECKY   OWENS CROSS ROADS   AL
+  774     4:40:53   49      Male             TIMOTHY               BLOCK      POWDER SPRINGS   GA
+  775     4:40:52   25      Male             MATTHEW               ADAMO          PITTSFIELD   MA
+  776     4:40:52   26    Female             CRYSTAL              WALKER          LOUISVILLE   KY
+  777     4:40:56   31      Male              JUSTIN            REYNOLDS          HUNTSVILLE   AL
+  778     4:41:21   23      Male                 IAN              BRYANT          HUNTSVILLE   AL
+  779     4:41:24   36      Male                TONY               WHITE          HUNTSVILLE   AL
+  780     4:42:23   35    Female             JESSICA               IPNAR          HUNTSVILLE   AL
+  781     4:42:33   61      Male             MANFRED              SAMIMY             CHICAGO   IL
+  782     4:42:26   49    Female               TAMMY              BENDER             MADISON   AL
+  783     4:42:20   39      Male                ERIC                UBIL              DURHAM   NC
+  784     4:42:35   63      Male              RAFAEL              ROHENA             HOUSTON   TX
+  785     4:42:47   40    Female               SARAH            CRABTREE          CINCINNATI   OH
+  786     4:42:53   32      Male                SEAN            STRINGER               TONEY   AL
+  787     4:43:21   66      Male                MIKE              HARRIS          BIRMINGHAM   AL
+  788     4:43:44   40      Male             WILLIAM              WESSON              OXFORD   AL
+  789     4:43:45   40    Female               LAURA       NEWMAN WESSON              OXFORD   AL
+  790     4:43:14   44      Male                  ED              TOMLIN         HAZEL GREEN   AL
+  791     4:43:26   55      Male               STEVE              THOMAS        INDIANAPOLIS   IN
+  792     4:43:24   38    Female               GARIE                 RAY                 EVA   AL
+  793     4:43:30   33    Female               SARAH            MITCHELL             ATLANTA   GA
+  794     4:44:00   53      Male                GALE            DINGWELL         NEW WINDSOR   NY
+  795     4:44:00   53    Female                HYON            DINGWELL         NEW WINDSOR   NY
+  796     4:43:47   50      Male                JOHN            MAGNUSON        MURFREESBORO   TN
+  797     4:43:52   34    Female               EDANA                NAIL              FULTON   MS
+  798     4:44:14   36    Female              ELYSSA             DUFRENE             MADISON   AL
+  799     4:44:03   36    Female             STOBHAN            ROBINSON            COLUMBUS   GA
+  800     4:44:25   65      Male             MADISON            MAGARGEE          HUNTSVILLE   AL
+  801     4:44:16   42      Male              ANDREW               WULFF             MADISON   AL
+  802     4:44:12   66      Male                 P L              JOWERS            MOULTRIE   GA
+  803     4:44:38   31    Female             BRIANNA           PADUGANAN            FLORENCE   AL
+  804     4:44:17   57      Male                 JIM           DONALDSON        FAYETTEVILLE   TN
+  805     4:44:22   36    Female             SANGLIM                WARD              DALLAS   GA
+  806     4:44:58   40    Female                 KIM               KOMAR            BRIGHTON   MI
+  807     4:44:31   51      Male                JEFF                 LEE           HARTSELLE   AL
+  808     4:45:06   23    Female              RACHEL               SMITH             CULLMAN   AL
+  809     4:44:45   48      Male              STEVEN                CARR          HUNTSVILLE   AL
+  810     4:44:46   46      Male               WAYNE              PATTON           LYNCHBURG   VA
+  811     4:44:32   53      Male               RICKY              KRISLE         SPRINGFIELD   TN
+  812     4:45:09   51      Male               SCOTT                FOXX           CHARLOTTE   NC
+  813     4:44:51   27      Male              JOSEPH              FIELDS        APPLE VALLEY   MN
+  814     4:44:51   22      Male              JUSTIN              CONANT              CANTON   ME
+  815     4:45:03   47    Female           STEPHANIE                CARR          HUNTSVILLE   AL
+  816     4:45:29   58    Female              SHARON          BUMGARDNER           KINGSPORT   TN
+  817     4:45:42   57    Female              JEANIE             COLLINS          HUNTSVILLE   AL
+  818     4:45:42   27    Female               HOLLY              KEETON             MADISON   AL
+  819     4:46:24   43    Female              MILLIE            SPEARING          HUNTSVILLE   AL
+  820     4:45:52   64      Male             CHARLES              BENTON           LEXINGTON   KY
+  821     4:46:48   21      Male                JOHN             NEWKIRK         CENTREVILLE   VA
+  822     4:46:08   42      Male               BRIAN               BOLIO          PRATTVILLE   AL
+  823     4:46:28   58      Male               STEVE            CRIMMINS             CUMMING   GA
+  824     4:46:39   34    Female               MISSY                BRAY             HARVEST   AL
+  825     4:46:39   33    Female                RESE             STEVENS             MADISON   AL
+  826     4:46:31   31    Female              BRENDA             SANCHEZ             TRINITY   AL
+  827     4:46:43   55    Female               TAMMY            CRAWFORD              EDMOND   OK
+  828     4:46:36   47      Male               JASON             HOOMANI            FRANKLIN   TN
+  829     4:47:00   25    Female             KAITLYN             THACKER       MERIDIANVILLE   AL
+  830     4:47:27   41    Female               TONIA             HARDING            BARTLETT   TN
+  831     4:47:25   34    Female               KATIE             WALTERS           MARYVILLE   TN
+  832     4:47:40   68      Male             STANLEY              PEIRCE           KINGSPORT   TN
+  833     4:47:37   31    Female               MEGAN             CRISLER             HARVEST   AL
+  834     4:47:12   28    Female            JENNIFER          HUDDLESTON          TUSCALOOSA   AL
+  835     4:47:45   45    Female               ADELE              BURNEY              APOPKA   FL
+  836     4:47:48   29      Male               CALEB           STAMBAUGH         CHATTANOOGA   TN
+  837     4:48:02   53      Male               CHUCK              COOPER   OWENS CROSS ROADS   AL
+  838     4:48:16   37      Male               JAMES             BURKEEN              MURRAY   KY
+  839     4:48:06   35    Female               ROBIN               WHITE      VESTAVIA HILLS   AL
+  840     4:47:54   49      Male               CHRIS              CONRAD        BYRON CENTER   MI
+  841     4:48:07   58      Male             RICHARD            LANGSTON      PLEASANT GROVE   AL
+  842     4:48:10   79      Male                  AL           KLIMAITIS          SCOTTSBORO   AL
+  843     4:48:07   50      Male               CHRIS              LAGACY              MORTON   IL
+  844     4:48:09   40    Female              CARRIE             CAMERON           NORTHPORT   AL
+  845     4:48:46   45    Female               CINDY              POWELL           TULLAHOMA   TN
+  846     4:48:47   47    Female               SANDY              STAGGS          LIVINGSTON   TN
+  847     4:48:38   27      Male              JARROD                KING             MADISON   AL
+  848     4:48:46   38    Female               MISSY              CARTER          STARKVILLE   MS
+  849     4:48:40   54      Male                JEFF           BURROUGHS             CULLMAN   AL
+  850     4:49:04   27      Male             MICHAEL             STEKLOF          LOUISVILLE   KY
+  851     4:48:31   41    Female            JENNIFER               MOORE             ATLANTA   GA
+  852     4:48:47   21    Female                SARA              LALONE             ELKHART   IN
+  853     4:48:46   44    Female            MICHELLE         HAWKERSMITH          WINCHESTER   TN
+  854     4:48:49   49      Male               ROYCE             JOHNSON        MURFREESBORO   TN
+  855     4:49:25   36      Male             MICHAEL                KING         HATTIESBURG   MS
+  856     4:49:33   54      Male                MARK             ZAREMBA              KILLEN   AL
+  857     4:49:32   54      Male                 JOE               DUMAS     SIGNAL MOUNTAIN   TN
+  858     4:49:47   39    Female               CARLA       HOLLINGSWORTH            ANNISTON   AL
+  859     4:50:15   55    Female                GERI            WIESELER        SKIPPERVILLE   AL
+  860     4:49:40   54      Male                 DAN              SUSKIN             ATLANTA   GA
+  861     4:50:10   53      Male               EDDIE                OAKS          HUNTSVILLE   AL
+  862     4:49:43   50      Male              CARLOS              CHACON         ALBERTVILLE   AL
+  863     4:50:22   42    Female              MARTHA         VANBENDEGOM           MIDDLETON   WI
+  864     4:50:01   54    Female              RHONDA             CONDREY            FLORENCE   AL
+  865     4:50:19   21    Female              BROOKE           SILLIVANT          HUNTSVILLE   AL
+  866     4:50:27   42    Female               DIANA             GARRETT             HARVEST   AL
+  867     4:51:00   22      Male                ALEX           HENDERSON          HUNTSVILLE   AL
+  868     4:50:44   50      Male              DENNIS            ECKSTEIN          GREENVILLE   OH
+  869     4:50:59   55      Male              PHILIP                HILL             MADISON   AL
+  870     4:50:51   36    Female               LACEY               MIKUL               MOODY   AL
+  871     4:51:14   42    Female                BETH               HOUSE          MONTEVALLO   AL
+  872     4:51:16   34      Male                ERIC            ALBRIGHT             DECATUR   AL
+  873     4:51:24   51      Male                 JIM            SCHRAYER             BRISTOL   VA
+  874     4:51:08   53      Male              DANIEL               TRIPP          HUNTSVILLE   AL
+  875     4:51:58   58      Male              SIDNEY                HOYT          HUNTSVILLE   AL
+  876     4:51:24   56      Male                CARL              HODGES               COMER   GA
+  877     4:52:18   67      Male                 BOB              COFFEY      HENDERSONVILLE   TN
+  878     4:52:28   32      Male                JOHN               OWENS   OWENS CROSS ROADS   AL
+  879     4:52:09   40      Male                ANDY             JOHNSON            GALLATIN   TN
+  880     4:52:30   36    Female            JENNIFER            RAGSDALE          HUNTSVILLE   AL
+  881     4:52:31   47    Female              ALTHEA             STEARNS             ORLANDO   FL
+  882     4:52:42   65      Male                MIKE              HARMON             MUNFORD   AL
+  883     4:52:15   28      Male            KENDRICK              NEWTON           NASHVILLE   TN
+  884     4:52:42   40    Female               PAULA            ROBERSON              HEFLIN   AL
+  885     4:52:15   28    Female                LANE              NEWTON           NASHVILLE   TN
+  886     4:52:47   52      Male              DANIEL             GERVAIS            FRANKLIN   TN
+  887     4:52:49   45    Female            JENNIFER                 GUM          NEW MARKET   AL
+  888     4:52:19   55      Male              GEORGE               BROWN             CLINTON   IL
+  889     4:53:37   43      Male              JEREMY               EZELL        FAYETTEVILLE   TN
+  890     4:53:30   43    Female            K'LEETHA             GILBERT            GALLATIN   TN
+  891     4:53:11   45    Female               LAURA              DEHAYE          HUNTSVILLE   AL
+  892     4:53:18   52    Female             MARYLEE            STURGEON            HERNANDO   MS
+  893     4:53:27   21    Female               TESSA           PATTERSON            LAKEMONT   GA
+  894     4:53:36   58      Male              ROBERT                SIMS            HOMEWOOD   AL
+  895     4:53:41   36    Female             KENDALL             JACKSON             THORSBY   AL
+  896     4:53:50   23    Female             BRIDGET               DEWAN          OAK FOREST   IL
+  897     4:53:50   54    Female             FRANCES               DEWAN          OAK FOREST   IL
+  898     4:54:08   26    Female           CHRISTINE              CENTER           ROYAL OAK   MI
+  899     4:54:08   26    Female               ALEXA           HOSTETTER      VIRGINIA BEACH   VA
+  900     4:54:25   37      Male            MARSHALL               HODGE        MURFREESBORO   TN
+  901     4:54:07   51      Male              DONALD            HARTSELL          HUNTSVILLE   AL
+  902     4:54:09   18      Male                COLE             STOVALL           TULLAHOMA   TN
+  903     4:54:10   55    Female              SHERRY             STOVALL           TULLAHOMA   TN
+  904     4:54:10   32    Female                LISA              MADDOX             MADISON   AL
+  905     4:54:29   36    Female             LINDSEY              WILMER         HAZEL GREEN   AL
+  906     4:54:30   60      Male                 JON           ALBRITTON          HUNTSVILLE   AL
+  907     4:54:29   51      Male              HAROLD            DONNELLY          NASHVILLLE   TN
+  908     4:54:29   36    Female                ERIN                ROSS             MADISON   AL
+  909     4:54:36   56    Female            MICHELLE               KREFT          LAINGSBURG   MI
+  910     4:54:37   56    Female                 SUE              WISMER             LANSING   MI
+  911     4:54:58   36    Female              CARRIE             HAWKINS          HUNTSVILLE   AL
+  912     4:54:56   25    Female              MORGAN             ATCHLEY          HUNTSVILLE   AL
+  913     4:55:12   47    Female               CASEY               FRITZ   OWENS CROSS ROADS   AL
+  914     4:54:48   40      Male                ADAM              HUDSON             DECATUR   AL
+  915     4:55:00   53    Female                LISA                HALL          HUNTSVILLE   AL
+  916     4:55:01   42      Male               BRIAN                PARR              MURRAY   KY
+  917     4:55:19   52    Female              CONNIE            WASHBURN             CORDOVA   TN
+  918     4:55:49   60      Male              ALEXIS            DAVIDSON            BROOKLYN   NY
+  919     4:55:36   56      Male                LUIS              OCCENA            COLUMBIA   MO
+  920     4:55:32   35    Female             CAITLIN        HEFFELFINGER          CHESAPEAKE   VA
+  921     4:55:27   39    Female              EURIKA              FOSTER          HUNTSVILLE   AL
+  922     4:55:33   48    Female                ANNE             STEWART          HUNTSVILLE   AL
+  923     4:55:52   31    Female         SARA-ASHLEY              GRAHAM           CHARLOTTE   NC
+  924     4:56:03   49      Male                 JAY             HAWKINS          HUNTSVILLE   AL
+  925     4:56:01   50    Female             SUZANNE            ERICKSON        HAMPTON COVE   AL
+  926     4:56:06   37    Female               KAREN             SHELLEY             HENAGAR   AL
+  927     4:55:45   42      Male               BRIAN              MURRAY                TROY   AL
+  928     4:55:38   54      Male                JEFF             HANCOCK          SCOTTSBORO   AL
+  929     4:56:18   45    Female              DIANNA              CIOPPI        HAMPTON COVE   AL
+  930     4:56:08   39      Male               AARON            BURCHELL           HARTSELLE   AL
+  931     4:56:45   43    Female                RENE               REDER             DECATUR   AL
+  932     4:56:42   48      Male                RICK               JANSS           SOUTHSIDE   AL
+  933     4:56:58   33    Female               MEGAN             NOBRIGA          HUNTSVILLE   AL
+  934     4:57:16   42    Female                LORI                WATT            LOVELAND   OH
+  935     4:56:52   48    Female               TRACY            SHACKETT              AUBURN   AL
+  936     4:57:01   48      Male             WILLIAM              VARNON          BROWNSBORO   AL
+  937     4:57:18   46    Female               LAURA             CAMACHO            FRANKLIN   TN
+  938     4:57:19   34    Female               JAMIE                HELM           NASHVILLE   TN
+  939     4:57:36   19      Male               TYLER               SMITH          HUNTSVILLE   AL
+  940     4:57:18   61      Male             CHARLIE               BROWN          BIRMINGHAM   AL
+  941     4:57:17   26    Female           CHRISTINE           BAGDIGIAN          HUNTSVILLE   AL
+  942     4:57:57   38    Female               KARLA           MACGREGOR           MILLBROOK   AL
+  943     4:57:46   46    Female                 KIM               RABER          CINCINNATI   OH
+  944     4:57:33   69      Male              TRUMAN               SMITH         CHATTANOOGA   TN
+  945     4:57:24   49    Female                JILL                 KEY             DECATUR   AL
+  946     4:58:01   43    Female             ELLEANA                LOWE        RUSSELLVILLE   KY
+  947     4:57:58   29      Male               LLOYD                WALL         HAZEL GREEN   AL
+  948     4:57:53   52    Female               KAREN              GELMIS          HUNTSVILLE   AL
+  949     4:58:10   27      Male              JUSTIN            WILLETTE          HUNTSVILLE   AL
+  950     4:57:53   49    Female               STACY            CANTRELL          HUNTSVILLE   AL
+  951     4:57:53   32    Female                SARA            CANTRELL            PORTLAND   OR
+  952     4:57:53   33    Female              ALISON           ENGLESTAD          HUNTSVILLE   AL
+  953     4:57:53   25    Female             BRIDGET              BROOKE          HUNTSVILLE   AL
+  954     4:57:46   30    Female             JESSICA             COLLINS           ST. LOUIS   MO
+  955     4:58:28   41      Male                 SAM               GREER              HIXSON   TN
+  956     4:58:10   36      Male             PATRICK              HUGHES          LOUISVILLE   KY
+  957     4:58:57   42      Male                TROY              MOYERS             MADISON   AL
+  958     4:58:13   58    Female              DEBBIE        WALKER-EVANS         SPRINGVILLE   AL
+  959     4:58:30   40      Male             CHARLES              GARSON             MADISON   AL
+  960     4:58:13   40    Female             MICHELE            CHALMERS             MADISON   AL
+  961     4:58:28   41    Female               STACY           ETHEREDGE        BLOUNTSVILLE   AL
+  962     4:58:30   59    Female               LAURA         HOLLENBAUGH              ARVADA   CO
+  963     4:58:36   46    Female               MISTY               BYERS            WILDWOOD   MO
+  964     4:58:48   45      Male                 JOE                RIST          HUNTSVILLE   AL
+  965     4:58:41   55      Male              ROBERT            MCFADDEN   OWENS CROSS ROADS   AL
+  966     4:59:13   53      Male              ROBERT            DIRMEYER             MADISON   AL
+  967     4:58:58   54    Female                MARY                HUNT         LAKE ZURICH   IL
+  968     4:59:37   58      Male               DAVID              WARREN                ROME   GA
+  969     4:59:55   43      Male               SCOTT               PERRY             MADISON   AL
+  970     4:59:52   32    Female           ELIZABETH           NICHOLSON         ALBERTVILLE   AL
+  971     4:59:34   28      Male              STEVEN              BAGLEY           PELL CITY   AL
+  972     4:59:48   57      Male              RONALD            WILLIAMS             MADISON   AL
+  973     5:00:22   49    Female           CATHERINE               PIPER            MARIETTA   GA
+  974     5:00:20   43    Female              ANGELA               MEEKS               TONEY   AL
+  975     5:00:18   41    Female              MORGAN            MAYFIELD          HUNTSVILLE   AL
+  976     5:00:30   58    Female               ANITA               JONES         ROGERSVILLE   TN
+  977     5:00:34   36    Female             HEATHER               LEITH            VINEMONT   AL
+  978     5:01:10   43    Female               TRACY              MEDINA            COLUMBUS   GA
+  979     5:01:03   53    Female                GAIL               SIKES    OWENS CROSS ROAD   AL
+  980     5:01:25   43      Male                MARK              KESLEY           CLEVELAND   TN
+  981     5:01:38   38    Female              AMANDA              TIPTON           KINGSPORT   TN
+  982     5:02:02   32      Male                RYAN            PERILLAT            FLORENCE   AL
+  983     5:02:07   62      Male                JOHN           STANFIELD         SPRINGFIELD   IL
+  984     5:02:02   61      Male               DAVID              MALICK          BIRMINGHAM   AL
+  985     5:02:22   30    Female              MARIEL            CALLOWAY              OAKMAN   AL
+  986     5:01:56   70      Male              WARREN             EVERETT          HUNTSVILLE   AL
+  987     5:02:25   19      Male                BRAD             ROBISON              GURLEY   AL
+  988     5:02:23   48      Male              ANDREW               LYONS              SMYRNA   GA
+  989     5:02:59   56      Male                DEAN               SIDES          BIRMINGHAM   AL
+  990     5:03:10   32      Male              RONALD               UNGER             HARVEST   AL
+  991     5:03:36   36    Female              JAMILA            WILLIAMS          HUNTSVILLE   AL
+  992     5:03:37   40      Male                CHAD               ELLIS           JONESBORO   GA
+  993     5:04:01   34    Female             TIFFANY             BLALOCK          SCOTTSBORO   AL
+  994     5:04:07   59      Male                GARY               SMITH          SHREVEPORT   LA
+  995     5:04:04   35      Male                TODD              POWERS          HUNTSVILLE   AL
+  996     5:04:32   32    Female              SHEENA           SHEFFIELD           WOODSTOCK   GA
+  997     5:04:43   41    Female             YOCUNDA             CLAYTON            IRONDALE   AL
+  998     5:04:04   51      Male                JEFF             DUCKETT            KENNESAW   GA
+  999     5:04:18   52      Male              BARTON              HARPER              ATHENS   AL
+ 1000     5:04:47   37    Female               LAURA              CATLIN            MARIETTA   GA
+ 1001     5:04:35   57      Male             MICHAEL                POPE           KINGSPORT   TN
+ 1002     5:05:32   52    Female               NANCY             BINGHAM        FAYETTEVILLE   GA
+ 1003     5:05:57   32    Female                 JOY            SMITHSON         HATTIESBURG   MS
+ 1004     5:06:17   34    Female               KAREN              THOMAS             DECATUR   AL
+ 1005     5:06:18   43    Female               KELLY            GRIFFITH             DECATUR   AL
+ 1006     5:06:37   51    Female             DEBORAH              TIPTON           KINGSPORT   TN
+ 1007     5:07:09   39    Female             LINDSAY              ISAACS             DECATUR   GA
+ 1008     5:07:09   34    Female               EMILY              MILLER          CROSSVILLE   TN
+ 1009     5:07:13   45      Male         CHRISTOPHER           HENDERSON          HUNTSVILLE   AL
+ 1010     5:06:48   67      Male               CRAIG               KELLY          HUNTSVILLE   AL
+ 1011     5:07:31   41      Male               KEVIN               AGENT        PHILADELPHIA   MS
+ 1012     5:08:10   62      Male                 LEE       HOLLINGSWORTH             MADISON   AL
+ 1013     5:08:27   54    Female               MARIA               CACHO           BRENTWOOD   TN
+ 1014     5:07:58   36    Female             MELISSA                HOLT           NORTHPORT   AL
+ 1015     5:08:14   46      Male             PATRICK             RENFROE              ATHENS   AL
+ 1016     5:08:14   57    Female              VICKIE          MONTGOMERY        LACEY SPRING   AL
+ 1017     5:07:51   48      Male                DEAN              COLYAR            TULAHOMA   TN
+ 1018     5:08:13   50    Female               MINDY               ZATTO             ATLANTA   GA
+ 1019     5:08:49   37    Female               SUSAN              INGLIS             MADISON   AL
+ 1020     5:09:03   30    Female            JENNIFER             TALBOTT           HERMITAGE   TN
+ 1021     5:09:03   36    Female                JILL               RIDER           NASHVILLE   TN
+ 1022     5:08:42   52    Female                KAKI             JENKINS          BIRMINGHAM   AL
+ 1023     5:08:43   54      Male             MICHAEL             JENKINS          BIRMINGHAM   AL
+ 1024     5:08:47   56    Female               JULIE          ZINGARELLI          HUNTSVILLE   AL
+ 1025     5:08:39   52      Male             JEFFREY             KRAMMES              GURLEY   AL
+ 1026     5:09:18   28    Female                GAIL            DANNEMAN           NASHVILLE   TN
+ 1027     5:09:46   32    Female               LYDIA              GILLIS             AUGUSTA   GA
+ 1028     5:09:43   36      Male             MICHAEL            COCKRELL            MARIETTA   GA
+ 1029     5:10:04   62      Male                JOHN                LANE              PARKER   CO
+ 1030     5:09:56   53    Female               KELLI               MAGRE              FESTUS   MO
+ 1031     5:09:31   33      Male              JUSTIN            FOREHAND             MADISON   AL
+ 1032     5:09:55   58      Male                GARY                KING           WESTFIELD   IN
+ 1033     5:10:31   32    Female               SARAH              HUGHES         SODDY DAISY   TN
+ 1034     5:10:18   47    Female            CARALISA        BREIDENBAUGH              FOWLER   OH
+ 1035     5:10:37   40      Male                ALEX              CHILDS              HOOVER   AL
+ 1036     5:10:32   27    Female              HANNAH                SHAW            HERNANDO   MS
+ 1037     5:10:44   33    Female             REBECCA            REYNOLDS          HUNTSVILLE   AL
+ 1038     5:10:37   50      Male                JOHN              WATSON              PELHAM   AL
+ 1039     5:10:47   46      Male                JEFF               ESTES              HOOVER   AL
+ 1040     5:10:44   36    Female            JENNIFER                WYNN             DECATUR   AL
+ 1041     5:10:59   32      Male                 JOE         MCCOLLISTER             DECATUR   AL
+ 1042     5:11:25   54      Male             MICHAEL               GRAGG        MURFREESBORO   TN
+ 1043     5:11:21   45      Male              VERNON            ATCHISON       PLANTERSVILLE   AL
+ 1044     5:11:21   45      Male               SHAWN            JOHNSTON             JEMISON   AL
+ 1045     5:11:09   54      Male               STEVE              DUVALL          LOUISVILLE   KY
+ 1046     5:11:39   48    Female           STEPHANIE              CLIETT          BIRMINGHAM   AL
+ 1047     5:11:59   39    Female             MELANIE              BROOKS              OXFORD   AL
+ 1048     5:12:17   65    Female                ERIN             MCGUIRE        FAYETTEVILLE   TN
+ 1049     5:12:41   50    Female             CAROLYN               HUBER               ELGIN   IL
+ 1050     5:12:52   51    Female               KATHY           HIGHTOWER   OWENS CROSS ROADS   AL
+ 1051     5:12:18   62      Male               BRENT          MONTGOMERY             MADISON   AL
+ 1052     5:13:13   60      Male                 KEN            FATTMANN         BENTONVILLE   AR
+ 1053     5:13:03   24    Female               ANGIE           SELVAGGIO          HUNTSVILLE   AL
+ 1054     5:13:26   43      Male                NEIL               PEREZ             HARVEST   AL
+ 1055     5:14:03   33    Female                JENN              DENNIS          BROWNSBORO   AL
+ 1056     5:14:26   34      Male                TREY             PINEGAR             MADISON   AL
+ 1057     5:14:54   27      Male             JEFFREY             VEJVODA            LEESBURG   VA
+ 1058     5:15:16   32      Male              JOSHUA               CLARY           OWENSBORO   KY
+ 1059     5:16:49   44      Male            CORNELIU             HENEGAR          HUNTSVILLE   AL
+ 1060     5:17:01   25    Female             CHELSEA              LAVISH             MADISON   AL
+ 1061     5:16:57   36      Male                BRAD              EHRMAN             MADISON   AL
+ 1062     5:16:45   47    Female              SHANON             BARNETT             CULLMAN   AL
+ 1063     5:16:48   44      Male              DENNIS             HAFFORD            ALBUQUER   NM
+ 1064     5:17:15   44    Female               SUSAN               EWING        COLLIERVILLE   TN
+ 1065     5:17:37   50      Male                TODD               GOBER        MURFREESBORO   TN
+ 1066     5:17:55   62      Male             CLIFTON          CARTWRIGHT          BOONEVILLE   MS
+ 1067     5:17:32   64      Male                 JIM             JACKSON             CORINTH   MS
+ 1068     5:18:05   51    Female             REBECCA             JOHNSON              AUBURN   KY
+ 1069     5:18:24   40      Male               RAMON              PEDOTO             MADISON   AL
+ 1070     5:18:00   67      Male               JAMES              OBRYAN               EAGLE   WI
+ 1071     5:18:02   49      Male                UMAR               HICKS             MADISON   AL
+ 1072     5:18:52   32    Female                ANNA             MCNELLY          BIRMINGHAM   AL
+ 1073     5:19:14   52      Male               DANNY              STAGGS          LIVINGSTON   TN
+ 1074     5:19:08   46    Female             PHYLLIS             PICKENS               MASON   OH
+ 1075     5:19:15   30    Female              AMANDA              STAGGS           HERMITAGE   TN
+ 1076     5:19:56   42      Male                DANA               BROWN          ADAMSVILLE   AL
+ 1077     5:19:36   51      Male         CHRISTOPHER              SALLEY           KINGSPORT   TN
+ 1078     5:19:33   61    Female            FLORENCE            LEYSSENE         CEDAR GROVE   NJ
+ 1079     5:20:11   33    Female                CARA             SCHOLTZ            GLENSHAW   PA
+ 1080     5:20:13   40    Female                 KIM              SHORES             ELKMONT   AL
+ 1081     5:20:38   40    Female              ANGELA            DUBINGER          NEW CASTLE   IN
+ 1082     5:20:29   33      Male              DANIEL             SHANNON             MADISON   AL
+ 1083     5:20:17   45    Female                LORI         STONEBURNER           LEXINGTON   KY
+ 1084     5:20:18   64      Male               DAVID               FLYNN           LEXINGTON   KY
+ 1085     5:20:53   29      Male                MATT             DONEGAN           NASHVILLE   TN
+ 1086     5:20:52   31    Female              RACHEL             MATHIAS           NASHVILLE   TN
+ 1087     5:21:06   51    Female               SUSAN             HAMMOND             MADISON   AL
+ 1088     5:21:36   69      Male              GEORGE           SOUTHGATE             CALHOUN   GA
+ 1089     5:21:28   45      Male                WARD               SAYRE         HATTIESBURG   MS
+ 1090     5:21:27   43    Female               WENDY        ATKINS-SAYRE         HATTIESBURG   MS
+ 1091     5:21:33   43    Female             JANIESE              GIBSON              NEWNAN   GA
+ 1092     5:21:35   59      Male             CHARLIE                EPPS          HUNTSVILLE   AL
+ 1093     5:21:43   26      Male              TAYLOR             ANDREWS              SMYRNA   GA
+ 1094     5:21:35   40    Female              STACEY              GLOVER              ATHENS   AL
+ 1095     5:21:20   38      Male                JACK             PULIZZO            ST LOUIS   MO
+ 1096     5:21:21   44      Male               SATYA          GULLAPALLI              HOOVER   AL
+ 1097     5:21:50   41    Female              JENNIE             BARNETT             ELKMONT   AL
+ 1098     5:21:59   47      Male             MATTHEW            DOUBRAVA           PENSACOLA   FL
+ 1099     5:21:37   51      Male                CLAY            WARMBROD         HAZEL GREEN   AL
+ 1100     5:22:20   41    Female              KENDRA               KELLY          TRUSSVILLE   AL
+ 1101     5:21:59   50      Male              DANIEL              CURTIS      VIRGINIA BEACH   VA
+ 1102     5:22:01   50      Male             RANDALL             SHEPARD          NEW MARKET   AL
+ 1103     5:22:25   56      Male               BUTCH               PAYNE         BLOUNTVILLE   TN
+ 1104     5:22:40   44      Male                 EDD              PEYTON           SOUTHAVEN   MS
+ 1105     5:22:50   57    Female               KAREN           KHODADADI              AUBURN   AL
+ 1106     5:22:29   34      Male                LUKE               BRISK             MADISON   AL
+ 1107     5:23:25   57    Female               VICKI             LEFEVRE          HUNTSVILLE   AL
+ 1108     5:23:58   68      Male              EUGENE             HOLLMAN           LYNNVILLE   TN
+ 1109     5:23:49   45      Male                GARY              HARVEY      VESTAVIA HILLS   AL
+ 1110     5:23:49   45      Male                BRAD              ARNOLD            VESTAVIA   AL
+ 1111     5:24:03   54    Female               DIANE              BOLTON           NASHVILLE   TN
+ 1112     5:23:34   37    Female             CHARITY          CARTWRIGHT           ARLINGTON   TN
+ 1113     5:23:48   51      Male               NECAT           HAVLIOGLU         SAINT LOUIS   MO
+ 1114     5:23:49   35    Female              ALANNA              LEEPER             LEBANON   TN
+ 1115     5:24:08   54      Male                TONY               OSANI             MADISON   AL
+ 1116     5:23:28   64      Male             CHARLES           MORRISSEY         STOCKBRIDGE   GA
+ 1117     5:23:41   54      Male                PAUL            GRZEMSKI               ELGIN   IL
+ 1118     5:23:57   21    Female            SAVANNAH              SILVER             HARVEST   AL
+ 1119     5:24:26   37      Male               JASON                GILL         SPRING HILL   TN
+ 1120     5:24:34   25    Female             CANDICE              LANIUS          HUNTSVILLE   AL
+ 1121     5:25:09   45    Female             DEBORAH              HOSMER          HUNTSVILLE   AL
+ 1122     5:25:18   43    Female              ANDREA             JOHNSON      OWENS CROSS RD   AL
+ 1123     5:25:18   52    Female               ROBIN               GILES    OWENS CROSSROADS   AL
+ 1124     5:25:21   55      Male              ROBERT             SMALLEY           KNOXVILLE   TN
+ 1125     5:26:27   47      Male             TIMOTHY              MURPHY         NOBLESVILLE   IN
+ 1126     5:27:02   44      Male              STEVEN             COCHRAN                ROME   GA
+ 1127     5:27:48   57      Male                MARK            JENNINGS        JOHNSON CITY   TN
+ 1128     5:27:44   53      Male                TONY             JOHNSON              ATHENS   AL
+ 1129     5:27:59   65      Male                JACK             BAGGETT         ROCK SPRING   GA
+ 1130     5:28:26   45    Female             MARILYN           MCCORMICK         LAWRECEBURG   TN
+ 1131     5:28:31   49    Female            MICHELLE            MCNAMARA          CINCINNATI   OH
+ 1132     5:28:47   60      Male                RICK              MURRAY      HENDERSONVILLE   TN
+ 1133     5:28:51   30    Female                MARY                BEHM               ARLEY   AL
+ 1134     5:28:30   40    Female              CRISTY          CUNNINGHAM                ARAB   AL
+ 1135     5:28:48   28    Female            ANNALISA               LOPEZ             HARVEST   AL
+ 1136     5:28:39   60      Male             MICHAEL             JACKSON          HUNTSVILLE   AL
+ 1137     5:29:37   55    Female              DEBBIE            THORNTON            MARIETTA   MS
+ 1138     5:30:13   41    Female              DELPHA        BARTLEYJONES           ALABASTER   AL
+ 1139     5:30:15   37    Female              ALISON              FIELDS             MADISON   AL
+ 1140     5:30:50   32    Female              KRISTA              HISSEY             ROSWELL   GA
+ 1141     5:30:37   43      Male                REMY              COTTON          HUNTSVILLE   AL
+ 1142     5:31:04   45    Female               WONDA              ABBOTT          NEW MARKET   AL
+ 1143     5:31:37   50    Female               KAREN           WAHLSTROM           GREENWOOD   IN
+ 1144     5:31:19   26      Male               AARON            LANGSTON      PLEASANT GROVE   AL
+ 1145     5:31:30   45    Female          CHRISTELLE      VAN STEENKISTE              CANTON   GA
+ 1146     5:31:31   43    Female             SHANNON              NELSON         NOLENSVILLE   TN
+ 1147     5:31:31   40    Female               JULIE             SPARROW         NOLENSVILLE   TN
+ 1148     5:31:21   43      Male              ANDREW               KNOTT          HUNTSVILLE   AL
+ 1149     5:32:04   59    Female                 KIM          MCCANDLESS             MADISON   AL
+ 1150     5:32:16   46    Female                ANNE             BURROWS             ELKMONT   AL
+ 1151     5:31:55   41      Male                MARK             GILBERT             MAYLENE   AL
+ 1152     5:31:53   38      Male                 ASH              MILLER             DECATUR   GA
+ 1153     5:33:29   57    Female               KATHY            ANDERSON             MADISON   AL
+ 1154     5:33:26   33    Female              MARTHA            MARTINEZ             CHICAGO   IL
+ 1155     5:33:18   32    Female              ASHLEY            REYNOLDS       BOWLING GREEN   KY
+ 1156     5:33:53   39    Female            ADRIENNE              CARTER          BIRMINGHAM   AL
+ 1157     5:33:52   35    Female            MEREDITH              GEORGE              CALERA   AL
+ 1158     5:34:09   37    Female               JANIE              MCNUTT           CLEVELAND   AL
+ 1159     5:34:32   59      Male                JOHN              FOSTER        WEST LEBANON   NH
+ 1160     5:34:55   48    Female             CECELIA                SIMS           ALABASTER   AL
+ 1161     5:35:10   56    Female              SERENA             NEWMANN           NASHVILLE   TN
+ 1162     5:35:11   35    Female             REBECCA               PAYNE         CHATTANOOGA   TN
+ 1163     5:35:17   44      Male                ERIC         VANDERSLICE             MADISON   AL
+ 1164     5:34:46   46    Female                 AMY      HARPER-HOGANCA             CLINTON   KY
+ 1165     5:35:14   71      Male                JACK              HASSON          BIRMINGHAM   AL
+ 1166     5:35:32   51      Male               JAMES             CUTTING             ELKMONT   AL
+ 1167     5:36:15   38    Female          RUTH MARIE              OLIVER   OWENS CROSS ROADS   AL
+ 1168     5:36:28   40    Female            KIMBERLY            MORRISON              HOWELL   MI
+ 1169     5:36:52   61      Male               ROGER                GALL           TULLAHOMA   TN
+ 1170     5:36:29   43    Female             KRISTIN                LONG              HELENA   AL
+ 1171     5:37:17   55      Male              THOMAS                HALL          BIRMINGHAM   AL
+ 1172     5:37:04   38      Male                JOHN               IRWIN              KAILUA   HI
+ 1173     5:36:55   41    Female               KATIE            CLEMMONS             CULLMAN   AL
+ 1174     5:37:18   49      Male             WILLIAM              HANSON                ARAB   AL
+ 1175     5:39:20   59    Female            MARGARET              HVATUM           ST. LOUIS   MO
+ 1176     5:39:14   29    Female                LENA            LINDBERG          SCHAUMBURG   IL
+ 1177     5:39:48   52    Female               TERRY           DE LA PAZ             MADISON   AL
+ 1178     5:39:14   20      Male             COLEMAN              WALKER            WARTRACE   TN
+ 1179     5:39:26   42    Female            MICHELLE            JTINEANT             HARVEST   AL
+ 1180     5:40:24   49    Female                SARA               HEARD            BROOKLYN   NY
+ 1181     5:40:43   40    Female             CAROLYN          MCLAUGHLIN          HUNTSVILLE   AL
+ 1182     5:40:23   57    Female               DONNA              HOPPER       MERIDIANVILLE   AL
+ 1183     5:40:23   53    Female             BEVERLY             HANBACK          HUNTSVILLE   AL
+ 1184     5:40:30   52      Male             STEPHEN          MANSPEAKER            O FALLON   IL
+ 1185     5:40:22   52      Male               SCOTT          SMOTHERMAN   OWENS CROSS ROADS   AL
+ 1186     5:40:27   32      Male             ZACHARY              CAYSON          HUNTSVILLE   AL
+ 1187     5:40:56   28    Female             CYNTHIA              CURTIS             HARVEST   AL
+ 1188     5:40:42   37      Male              RONNIE              DICKEY          HUNTSVILLE   AL
+ 1189     5:41:14   68      Male              RASHID               ABBAS             MADISON   AL
+ 1190     5:41:23   31      Male                PAUL               EVANS           LEXINGTON   KY
+ 1191     5:41:16   33      Male                ADAM            MITCHELL             ATLANTA   GA
+ 1192     5:43:20   38    Female               JENNY                MOON            NEW YORK   NY
+ 1193     5:43:07   44      Male              STEVEN              MILLER               ARDEN   NC
+ 1194     5:43:19   41      Male             HALBERT             WALSTON            RADCLIFF   KY
+ 1195     5:43:58   46    Female               DEANA                PEEK              JASPER   AL
+ 1196     5:44:04   51      Male               JAMIE             NEWKIRK         CENTREVILLE   VA
+ 1197     5:44:04   52    Female            MICHELLE             NEWKIRK         CENTREVILLE   VA
+ 1198     5:43:50   42      Male               JASON               RUBLE             MADISON   AL
+ 1199     5:45:13   45    Female               JENNY              MORRIS        HAMPTON COVE   AL
+ 1200     5:45:14   47      Male                PAUL              MORRIS        HAMPTON COVE   AL
+ 1201     5:45:09   33    Female              KELLIE             BULLARD              KILLEN   AL
+ 1202     5:45:42   42      Male              TRAVIS               HAGER        JONESBOROUGH   TN
+ 1203     5:45:43   59      Male                MARK             MCDAVID           KINGSPORT   TN
+ 1204     5:45:39   49    Female             BARBARA              ALSTON             SANFORD   FL
+ 1205     5:46:04   51      Male                 SON                PHAM             HARVEST   AL
+ 1206     5:45:38   34    Female             THERESA             WESSELS             MADISON   AL
+ 1207     5:46:47   51    Female               LINDA             CANNING        LAKE CHARLES   LA
+ 1208     5:47:25   29    Female             JESSICA                COOK             MADISON   AL
+ 1209     5:47:27   32    Female               EMILY              THOMAS           HAPEVILLE   GA
+ 1210     5:47:39   48    Female                LISA               HOGAN              IRVING   TX
+ 1211     5:47:33   60      Male                PHIL                 MIN         MOUNT OLIVE   AL
+ 1212     5:48:12   46      Male               GLENN              PARKER          HUNTSVILLE   AL
+ 1213     5:48:54   43    Female             NATALIE              SIBLEY          SHARPSBURG   GA
+ 1214     5:49:08   56    Female               JANET              WETZEL             MADISON   AL
+ 1215     5:49:22   39    Female                SONG             FLAGLER          HUNTSVILLE   AL
+ 1216     5:49:21   68    Female               BETSY          GLADFELTER          WOODS HOLE   MA
+ 1217     5:49:54   42      Male                ADAM             RAGLAND        FAYETTEVILLE   TN
+ 1218     5:49:53   25    Female           STEPHANIE              VARNER             HARVEST   AL
+ 1219     5:49:34   24    Female              SUMMER              DUTTON             MOULTON   AL
+ 1220     5:50:04   49    Female             SUZANNE           MICHELSON        JACKSONVILLE   AL
+ 1221     5:50:13   28    Female                ERIN             GILBERT            FLORENCE   AL
+ 1222     5:50:55   39    Female             JESSICA            GRIMSLEY           OWENSBORO   KY
+ 1223     5:51:00   48    Female                 PAM             PAINTER            COLUMBUS   MS
+ 1224     5:50:56   58      Male                BILL               WELLS          NEW ALBANY   IN
+ 1225     5:50:56   39      Male                JUAN              VALDEZ             CHICAGO   IL
+ 1226     5:52:32   34    Female             JESSICA                LANE              DALLAS   GA
+ 1227     5:53:42   39    Female               TERRI                HILL              ATHENS   AL
+ 1228     5:53:42   38    Female              JESSIE              PIERCE             ELKMONT   AL
+ 1229     5:53:30   58      Male                 JIM               ASKER         NOLENSVILLE   TN
+ 1230     5:54:16   65      Male               JAMES                CARR        HOPKINSVILLE   KY
+ 1231     5:54:17   30      Male             STEPHEN             SWEENEY          HUNTSVILLE   AL
+ 1232     5:54:43   63      Male            DAVID J.               RIKKE        INDIANAPOLIS   IN
+ 1233     5:55:23   42    Female            MICHELLE              AMARAL          HUNTSVILLE   AL
+ 1234     5:55:04   47    Female             ELEANOR             MOSELEY              HELENA   AL
+ 1235     5:56:01   69    Female              BONNIE           PARTRIDGE            COLUMBUS   MS
+ 1236     5:56:03   43    Female            MICHELLE              DENNEY           GREENWOOD   IN
+ 1237     5:55:59   66      Male               STEVE              MURRAY        PHILADELPHIA   MS
+ 1238     5:55:57   50    Female              TERESA             DARNELL        NICKELSVILLE   VA
+ 1239     5:55:57   46    Female               TAMMY             WILLETT           KINGSPORT   TN
+ 1240     5:55:58   54    Female               TAMMY               PAYNE         BLOUNTVILLE   TN
+ 1241     5:55:56   54    Female            JENNIFER               MOORE           MARYVILLE   TN
+ 1242     5:56:46   24    Female             CHELSEA           SCHIAVONE             MADISON   AL
+ 1243     5:56:14   58      Male               LARRY             BRADLEY             HARVEST   AL
+ 1244     5:56:25   56      Male             MICHAEL             BOWLING            CULLEOKA   TN
+ 1245     5:56:31   38      Male               BRIAN             RICKMAN               TIGER   GA
+ 1246     5:56:44   69      Male              DALJIT               SINGH          PLEASANTON   CA
+ 1247     5:56:56   51    Female                LYNN               JOYCE          BIRMINGHAM   AL
+ 1248     5:57:37   50      Male                JOHN           EDMUNDSON              HELENA   AL
+ 1249     5:57:09   55      Male                 REX              WALTER             HANOVER   PA
+ 1250     5:57:17   55      Male               STEVE            STURGEON            HERNANDO   MS
+ 1251     5:57:54   44    Female               KERRI             HASKINS            DANVILLE   NH
+ 1252     5:57:56   56      Male               DENIS            MCCARTHY         SAINT LOUIS   MO
+ 1253     5:58:10   40      Male               CHUCK              WALTER         ALBERTVILLE   AL
+ 1254     5:58:03   27    Female            JENNIFER               CRABB             HARVEST   AL
+ 1255     5:58:06   35    Female                NIKI              PALMER             GREENUP   KY
+ 1256     5:58:16   55    Female                RENA             STRANGE            NEW HOPE   AL
+ 1257     5:58:20   58      Male                JOHN                 RAY      ESTILL SPRINGS   TN
+ 1258     5:58:30   55    Female               WENDY             PRINDLE           LAS VEGAS   NV
+ 1259     5:58:36   34    Female            DANIELLE              TIPTON           KINGSPORT   TN
+ 1260     5:58:32   55    Female               KAREN              RUFFIN     SIGNAL MOUNTAIN   TN
+ 1261     5:58:41   41      Male                JOEL           PINKERTON              HOOVER   AL
+ 1262     5:58:47   48      Male               BRIAN               WHITE             JACKSON   AL
+ 1263     5:59:17   32    Female               APRIL             MADISON              OAKMAN   AL
+ 1264     5:59:18   34      Male                ERIC            MCLENDON              AUBURN   AL
+ 1265     5:59:10   28    Female               CAROL               MORSE             HARVEST   AL
+ 1266     5:59:19   21    Female             MIRANDA              WILSON          HUNTSVILLE   AL
+ 1267     5:59:29   44      Male               JAMES              FALCON          HUNTSVILLE   AL
+ 1268     5:59:19   34      Male            REGINALD               REESE            HUEYTOWN   AL
+ 1269     5:59:11   27      Male                 SAM             FULLONE             MADISON   AL
+ 1270     5:59:12   51    Female              TRACEY             MORRELL          HUNTSVILLE   AL
+ 1271     5:59:13   33      Male               JAMES             FULLONE             BUFFALO   NY
+ 1272     6:04:38   49      Male                ERIC            AVERETTE        JACKSONVILLE   AL
+
+Average Age: 42
+Count of Females: 499
+Average Female Age: 39
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+#include <algorithm>
+
+using namespace std;
+
+class runner
+{
+public:
+	int place;
+	string firstname;
+	string lastname;
+	int age;
+	string gender;
+	string city;
+	string state;
+	string time;
+};
+
+const int ROWS = 1273;
+const int COLS = 8;
+const int BUFFSIZE = 80;
+string str = "";
+int numb, pos;
+double ageSum = 0.0;
+double femaleAgeSum = 0.0;
+int countfemales = 0;
+
+runner runners[1500];
+
+int main()
+{
+	//Print what this program does
+	cout << "This program takes in a data set and calculates avg age, # females and avg female age." << endl;
+
+	char buff[BUFFSIZE];
+	ifstream infile("C:\\Users\\Erik\\OneDrive\\Documents\\Calhoun\\C++\\Data\\rocketcity.csv");
+	if (!infile)
+	{
+		cout << "File not found!\n";
+		return 1;
+	}
+
+	char str[101];
+
+	//read column headings
+	infile.getline(buff, BUFFSIZE);
+
+	//read the real data
+	//PLACE,TIME,Age,Gender,FIRST NAME,LAST NAME,CITY,ST
+	for (int row = 2; row <= ROWS; row += 1)
+	{
+		//read until first comma
+		infile.getline(str, 100, ',');
+		runners[row].place = atoi(str);
+		//read time
+		infile.getline(str, 100, ',');
+		runners[row].time = str;
+		//read age
+		infile.getline(str, 100, ',');
+		runners[row].age = atoi(str);
+		//read gender
+		infile.getline(str, 100, ',');
+		runners[row].gender = str;
+		//read first name
+		infile.getline(str, 100, ',');
+		runners[row].firstname = str;
+		//read last name
+		infile.getline(str, 100, ',');
+		runners[row].lastname = str;
+		//read city
+		infile.getline(str, 100, ',');
+		runners[row].city = str;
+		//read state
+		infile.getline(str, 100, '\n');
+		runners[row].state = str;
+	}
+
+	//Print out data: PLACE,TIME,Age,Gender,FIRST NAME,LAST NAME,CITY,ST
+	for (int r = 2; r <= ROWS; r += 1)
+	{
+		cout << setw(5) << runners[r].place;
+		cout << setw(12) << runners[r].time;
+		cout << setw(5) << runners[r].age;
+		cout << setw(10) << runners[r].gender;
+		cout << setw(20) << runners[r].firstname;
+		cout << setw(20) << runners[r].lastname;
+		cout << setw(20) << runners[r].city;
+		cout << setw(5) << runners[r].state;
+		cout << endl;
+	}
+
+	//Calculate average age, number of females and average age of female runners
+	for (int r = 2; r <= ROWS; r += 1)
+	{
+		ageSum = ageSum + runners[r].age;
+		if (runners[r].gender == "Female") femaleAgeSum = femaleAgeSum + runners[r].age;
+		if (runners[r].gender == "Female") countfemales += 1;
+	}
+
+	//Print out the average age of all runners, number of females, and average age of the female runners only.
+	cout << fixed << setprecision(0);
+	cout << "Average Age: " << ageSum / (ROWS - 2) << endl;
+	cout << "Count of Females: " << countfemales << endl;
+	cout << "Average Female Age: " << femaleAgeSum / countfemales << endl;
+
+
+
+	return 0;
+}

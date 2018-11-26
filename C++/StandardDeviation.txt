@@ -1,0 +1,138 @@
+Output:
+
+This program finds the min, max and average values in a set array.
+Choose an option (type a number between 1 and 4):
+1) Find minimum value
+2) Find maximum value
+3) Find average value
+4) Find the standard deviation
+5) Quit program
+4
+The standard deviation for the array is: 24
+
+End of program.
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int minvalue(int intArray[], int arraySize);
+int maxvalue(int intArray[], int arraySize);
+int avgvalue(int intArray[], int arraySize);
+int standardDeviationValue(int intArray[], int arraySize);
+
+int main()
+{
+	//Print what this program does
+	cout << "This program finds the min, max and average values in a set array." << endl;
+
+	//Initialize variables
+	int arraySize = 7;
+	int intArray[7] = { 3, 4, 84, 5, 2, 47, 7 };
+	int choice = 0;
+
+	while (choice != 4) // switch this to do 
+	{
+		cout << "Choose an option (type a number between 1 and 4):" << endl;
+		cout << "1) Find minimum value" << endl;
+		cout << "2) Find maximum value" << endl;
+		cout << "3) Find average value" << endl;
+		cout << "4) Find the standard deviation" << endl;
+		cout << "5) Quit program" << endl;
+		cin >> choice;
+
+		switch (choice) {
+		case 1:
+			cout << "The minimum value in the array is: " << minvalue(intArray, arraySize) << endl << endl;
+			break;
+		case 2:
+			cout << "The maximum value in the array is: " << maxvalue(intArray, arraySize) << endl << endl;
+			break;
+		case 3:
+			cout << "The average value for the array is: " << avgvalue(intArray, arraySize) << endl << endl;
+			break;
+		case 4:
+			cout << "The standard deviation for the array is: " << standardDeviationValue(intArray, arraySize) << endl << endl;
+			break;
+		}
+	}
+
+	cout << "End of program." << endl;
+
+
+	return 0;
+}
+
+int minvalue(int intArray[], int arraySize)
+{
+	int min = 10000;
+	for (int i = 0; i <= 6; i += 1) {
+		if (intArray[i] < min) min = intArray[i];
+	}
+	return min;
+}
+
+int maxvalue(int intArray[], int arraySize)
+{
+	int max = -10000;
+	for (int i = 0; i <= 6; i += 1) {
+		if (intArray[i] > max) max = intArray[i];
+	}
+	return max;
+}
+
+int avgvalue(int intArray[], int arraySize)
+{
+	int total = 0;
+	int avg = 0;
+	for (int i = 0; i <= 6; i += 1)
+	{
+		total += intArray[i];
+	}
+	avg = total / 7;
+	return avg;
+}
+
+
+int standardDeviationValue(int intArray[], int arraySize) 
+{
+	int total = 0;
+	int avg = 0;
+	for (int i = 0; i <= 6; i += 1)
+	{
+		total += intArray[i];
+	}
+	avg = total / 7;
+
+	//Calculate standard deviation
+	int stDevArray[7] = { 0 };
+	int standardDeviation = 0;
+	//Fill array of standard deviation
+	for (int i = 0; i <= 6; i += 1) 
+	{
+		stDevArray[i] = intArray[i] - avg;
+	}
+	//Take the absolute value of each entry
+	for (int i = 0; i <= 6; i += 1)
+	{
+		stDevArray[i] = abs(stDevArray[i]);
+	}
+	//Sum the standard deviation array and divide by size to obtain standard deviation
+	for (int i = 0; i <= 6; i += 1)
+	{
+		standardDeviation += stDevArray[i];
+	}
+	
+	standardDeviation = standardDeviation / 7;
+
+	return standardDeviation;
+}

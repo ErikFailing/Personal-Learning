@@ -1,0 +1,92 @@
+Output:
+
+This program calculates the probablity of getting x (0-10) heads when flipping a coin 10 times.
+    x         Probability of x
+    0                   0.0010
+    1                   0.0098
+    2                   0.0439
+    3                   0.1172
+    4                   0.2051
+    5                   0.2461
+    6                   0.2051
+    7                   0.1172
+    8                   0.0439
+    9                   0.0098
+   10                   0.0010
+
+
+
+Output:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program calculates the probablity of getting x (0-10) heads when flipping a coin 10 times." << endl;
+
+	//Set-up different random numbers everytime we run the program
+	srand(time(0));
+
+	//Initialize variables
+	ofstream outfile;
+	double factorial = 1.0;
+	double factorialArray[11] = { 0 };
+	double coinFlipArray[11] = { 0 };
+
+	//Calculate factorials 0-10
+	factorialArray[0] = 1;
+	for (int i = 1; i <= 10; i += 1) 
+	{
+		factorial = i;
+		for (int i2 = i - 1; i2 >= 1; i2 -= 1) factorial = factorial * i2;
+		factorialArray[i] = factorial;
+	}
+
+	//Calculate the probablity array of x heads in 10 trials
+	for (int x = 0; x <= 10; x += 1) 
+	{
+		coinFlipArray[x] = (factorialArray[10] / (factorialArray[x] * factorialArray[(10 - x)])) * (pow(0.5, x)) * (pow((1 - 0.5), (10 - x)));
+	}
+
+	//Print out results to console
+	cout << setw(5) << "x" << setw(25) << "Probability of x" << endl;
+	for (int i = 0; i <= 10; i += 1) 
+	{
+		cout << fixed << setprecision(0);
+		cout << setw(5) << i;
+		cout << fixed << setprecision(4);
+		cout << setw(25) << coinFlipArray[i] << endl;
+	}
+
+	//Create file
+	outfile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment11Data.txt");
+	if (!outfile) //file not created
+	{
+		cout << "Can't create the output file, check file path.\n";
+		cout << "This program will terminate.\n";
+		return 0;
+	}
+
+	//Print results to file
+	outfile << setw(5) << "x" << setw(25) << "Probability of x" << endl;
+	for (int i = 0; i <= 10; i += 1)
+	{
+		outfile << fixed << setprecision(0);
+		outfile << setw(5) << i;
+		outfile << fixed << setprecision(4);
+		outfile << setw(25) << coinFlipArray[i] << endl;
+	}
+
+	//Close file
+	outfile.close();
+
+	return 0;
+}

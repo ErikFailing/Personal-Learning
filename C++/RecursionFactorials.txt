@@ -1,0 +1,123 @@
+Output:
+
+This program calculates factorials from 0 to 30 using recursion
+   0                                       1
+   1                                       1
+   2                                       2
+   3                                       6
+   4                                      24
+   5                                     120
+   6                                     720
+   7                                    5040
+   8                                   40320
+   9                                  362880
+  10                                 3628800
+  11                                39916800
+  12                               479001600
+  13                              6227020800
+  14                             87178291200
+  15                           1307674368000
+  16                          20922789888000
+  17                         355687428096000
+  18                        6402373705728000
+  19                      121645100408832000
+  20                     2432902008176640000
+  21                    51090942171709440000
+  22                  1124000727777607680000
+  23                 25852016738884978212864
+  24                620448401733239409999872
+  25              15511210043330986055303168
+  26             403291461126605650322784256
+  27           10888869450418351940239884288
+  28          304888344611713836734530715648
+  29         8841761993739700772720181510144
+  30       265252859812191032188804700045312
+  
+  
+  
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+
+using namespace std;
+
+double factorial(int num);
+
+int main()
+{
+	//Print what this program does
+	cout << "This program calculates factorials from 0 to 30 using recursion" << endl;
+
+	//Initialize variables
+	double factorials[31] = { 0 };
+	ofstream outfile;
+
+	//Fill array
+	for (int i = 0; i <= 30; i += 1)
+	{
+		factorials[i] = factorial(i);
+	}
+
+	//Print factorials to console
+	cout << fixed << setprecision(0);
+	for (int i = 0; i <= 30; i += 1)
+	{
+		cout << setw(4) << i << setw(40) << factorials[i] << endl;
+	}
+
+	//Create HTML file
+	outfile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment20.html");
+	if (!outfile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+
+	//Print factorials HTML file
+	outfile << "<!DOCTYPE html><html>" << endl;
+	outfile << "<head><title>Assignment_20</title></head>" << endl;
+	outfile << "<body>" << endl;
+
+	outfile << "<link rel=\"stylesheet\" type=\"text / css\" href=\"mystyle.css\">" << endl;
+	outfile << "<style>" << endl;
+	outfile << "td, th {width: 20rem;height: 2rem;border: 1px solid #ccc;text - align: center;}th{background: lightblue;border - color: white;}body{padding: 1rem;}" << endl;
+	outfile << "</style>" << endl;
+
+	outfile << fixed << setprecision(0);
+	outfile << "<table>" << endl;
+	outfile << "<tr>" << endl;
+	outfile << "<th>  Number  </th>" << endl;
+	outfile << "<th>  Factorial  </th>" << endl;
+	outfile << "</tr>" << endl;
+	for (int i = 0; i <= 30; i += 1)
+	{
+		outfile << "<tr>" << endl;
+		outfile << "<td>" << i << "</td>" << endl;
+		outfile << "<td>" << factorials[i] << "</td>" << endl;
+		outfile << "</tr>" << endl;
+	}
+	outfile << "</table>";
+	outfile << "</body>";
+	outfile << "</html>";
+	outfile.close();
+
+	return 0;
+}
+
+double factorial(int n)
+{
+	if (n > 1)
+		return n * factorial(n - 1);
+	else
+		return 1;
+}

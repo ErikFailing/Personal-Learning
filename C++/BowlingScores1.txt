@@ -1,0 +1,99 @@
+Output:
+
+    Bowler Name:        Game 1:        Game 2:        Game 3:
+
+  Linus too good            100             23            210
+   Charlie brown              1              2             12
+          Snoopy            300            300            100
+ Peperment Patty            223            300            221
+         Pig Pen            234            123            212
+ Red Headed Girl            123            222            111
+          Marcey              1              2              3
+  keith hallmark            222            300            180
+   anna hallmark            222            111            211
+  roxie hallmark            100            100              2
+
+  Game Averages:          40.10          32.50          32.20
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program takes in bowler scores from a file and prints them into a nicely formatted table." << endl;
+
+	//Initialize variables
+	ifstream infile;
+	string bowlerNames[10];
+	double bowlerScores[10][3] = { 0 };
+	double gameAverages[3] = { 0 };
+
+	//Get the names and scores of the bowlers
+	infile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\bowlers2.txt");
+	if (!infile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+
+	//Get data from file
+	for (int i = 0; i <= 9; i += 1) 
+	{
+		getline(infile, bowlerNames[i]);
+		infile >> bowlerScores[i][0];
+		infile >> bowlerScores[i][1];
+		infile >> bowlerScores[i][2];
+		infile.ignore(100, '\n');
+	}
+	infile.close();
+
+	//Calculate the average score for each game
+	for (int i = 0; i <= 2; i += 1) 
+	{
+		double total = 0;
+		for (int i2 = 0; i2 <= 2; i2 += 1) 
+		{
+			total += bowlerScores[i2][i];
+		}
+		gameAverages[i] = total / 10;
+	}
+
+	//Print bowlers and their scores
+	cout << fixed;
+	cout << setw(16) << "Bowler Name:" << setw(15) << "Game 1:";
+	cout << setw(15) << "Game 2:" << setw(15) << "Game 3:" << endl << endl;
+	for (int i = 0; i <= 9; i += 1) 
+	{
+		//print bowler names
+		cout << setw(16) << bowlerNames[i];
+		//print bowler scores
+		cout << setprecision(0);
+		for (int i2 = 0; i2 <= 2; i2 += 1) 
+		{
+			cout << setw(15) << bowlerScores[i][i2];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	//Print the average score for each game
+	cout << setw(16) << "Game Averages:";
+	cout << setprecision(2);
+	for (int i = 0; i <= 2; i += 1) cout << setw(15) << gameAverages[i];
+
+	return 0;
+}

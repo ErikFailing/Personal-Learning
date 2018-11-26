@@ -1,0 +1,110 @@
+Output:
+
+Given r from 101 to 112, this program calculates r^2, r^3, sqrt(r) and cbrt(r)
+
+ r:            r^2:               r^3:       sqrt(r):       cbrt(r):
+
+101          10,201          1,030,301          10.05           4.66
+102          10,404          1,061,208          10.10           4.67
+103          10,609          1,092,727          10.15           4.69
+104          10,816          1,124,864          10.20           4.70
+105          11,025          1,157,625          10.25           4.72
+106          11,236          1,191,016          10.30           4.73
+107          11,449          1,225,043          10.34           4.75
+108          11,664          1,259,712          10.39           4.76
+109          11,881          1,295,029          10.44           4.78
+110          12,100          1,331,000          10.49           4.79
+111          12,321          1,367,631          10.54           4.81
+112          12,544          1,404,928          10.58           4.82
+
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+
+using namespace std;
+
+//Takes in an integer and formats it with commas, then returns it as a string
+string formatIntWithCommas(int num) {
+	string numString;
+	numString = to_string(num);
+	if (num > 999.0) {
+		//Get length, then minus three
+		int pos = numString.length() - 3;
+		//Start at end of string and work backwards
+		int counter = 0;
+		while (pos > 0) {
+			//if counter % 3 == 0 add a , at pos
+			if (counter % 3 == 0) numString.insert(pos, ",");
+			counter += 1;
+			pos -= 1;
+		}
+	}
+	return numString;
+}
+
+int main()
+{
+	//Print this program's use
+	cout << "Given r from 101 to 112, this program calculates r^2, r^3, sqrt(r) and cbrt(r)" << endl << endl;
+
+	//Declare varibles
+	int Squared;
+	int Cubed;
+	double Squareroot;
+	double Cuberoot;
+	ofstream outfile;
+	string SquaredFormatted;
+	string CubedFormatted;
+
+	//Print Headers
+	cout << " r:            r^2:               r^3:       sqrt(r):       cbrt(r):" << endl << endl;
+
+	//Create file
+	outfile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment9Data.txt");
+	if (!outfile) //file not created
+	{
+		cout << "Can't create the output file, check file path.\n";
+		cout << "This program will terminate.\n";
+		return 0;
+	}
+
+	//For loop
+	for (int r = 101; r <= 112; r += 1) 
+	{
+		//Calculate powers of r
+		Squared = pow(r, 2);
+		Cubed = pow(r, 3);
+		Squareroot = pow(r, (1.0 / 2.0));
+		Cuberoot = pow(r, (1.0 / 3.0));
+
+		//Format the numbers above 999
+		SquaredFormatted = formatIntWithCommas(Squared);
+		CubedFormatted = formatIntWithCommas(Cubed);
+
+		//Format and print results to console
+		cout << fixed << setprecision(0);
+		cout << setw(3) << r << setw(16) << SquaredFormatted << setw(19) << CubedFormatted;
+		cout << fixed << setprecision(2);
+		cout << setw(15) << Squareroot << setw(15) << Cuberoot << endl;
+
+		//Format and print results to file
+		outfile << fixed << setprecision(0);
+		outfile << setw(3) << r << setw(16) << SquaredFormatted << setw(19) << CubedFormatted;
+		outfile << fixed << setprecision(2);
+		outfile << setw(15) << Squareroot << setw(15) << Cuberoot << endl;
+	}
+
+	//Close file
+	outfile.close();
+
+	return 0;
+}

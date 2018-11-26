@@ -1,0 +1,101 @@
+Output: 
+
+Radius:      Height:       Volume:      Surface Area:
+  10.00        20.00       2094.40            1016.64
+  10.50        21.00       2424.52            1120.85
+  11.00        22.00       2787.64            1230.14
+  11.50        23.00       3185.31            1344.51
+  12.00        24.00       3619.11            1463.96
+  12.50        25.00       4090.62            1588.50
+  13.00        26.00       4601.39            1718.12
+  13.50        27.00       5153.00            1852.83
+  14.00        28.00       5747.02            1992.62
+  14.50        29.00       6385.03            2137.49
+  15.00        30.00       7068.58            2287.44
+  15.50        31.00       7799.27            2442.48
+  16.00        32.00       8578.64            2602.60
+  16.50        33.00       9408.28            2767.80
+  17.00        34.00      10289.76            2938.09
+  17.50        35.00      11224.65            3113.46
+  18.00        36.00      12214.51            3293.92
+  18.50        37.00      13260.92            3479.45
+  19.00        38.00      14365.46            3670.07
+  19.50        39.00      15529.68            3865.78
+  20.00        40.00      16755.16            4066.56
+
+Total radius was: 315.00
+Total height was: 630.00
+Total volume was: 166582.95
+Total surface area was: 49993.31
+
+Code:
+
+//Program Goal:
+//Calculate and print the area and volume of a cone inside a While loop that goes from 10 to 20 (radius) with a step of .5
+//Use two decimal places on all numbers.
+//This will be a table with 3 columns.Don't worry about borders or grid lines on the table. 
+//print column headings outside the loop
+//Use r as the loop counter and as the radius.Let the height of the cone be twice the radius.
+//Below the while loop, print the sum of all 3 columns
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() 
+{
+	//Declare pi variable
+	double pi = 3.14159265359;
+
+	//Set decimal places format
+	cout << fixed << setprecision(2);
+	
+	//Declare variables
+	double radius = 10;
+	double height;
+	double surfaceArea;
+	double volume;
+
+	//Declare total variables
+	double totalRadius = 0;
+	double totalHeight = 0;
+	double totalSurfaceArea = 0;
+	double totalVolume = 0;
+
+	//Print headers
+	cout << "Radius:      Height:       Volume:      Surface Area:" << endl;
+
+	//Main loop
+	while (radius <= 20) 
+	{
+		//Calculate varibles
+		height = radius * 2;
+		surfaceArea = pi * radius *(radius + sqrt(pow(height, 2) + pow(radius, 2)));
+		volume = pi * pow(radius, 2) * (height / 3);
+
+		//Add to running totals
+		totalRadius += radius;
+		totalHeight += height;
+		totalSurfaceArea += surfaceArea;
+		totalVolume += volume;
+
+		//Print variables
+		cout << setw(7) << radius << setw(13) << height << setw(14) << volume << setw(19) << surfaceArea << endl;
+
+		//Increment radius
+		radius += 0.5;
+	}
+
+	//Print totals
+	cout << endl;
+	cout << "Total radius was: " << totalRadius << endl;
+	cout << "Total height was: " << totalHeight << endl;
+	cout << "Total volume was: " << totalVolume << endl;
+	cout << "Total surface area was: " << totalSurfaceArea << endl;
+
+
+	return 0;
+}

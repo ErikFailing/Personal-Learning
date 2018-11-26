@@ -1,0 +1,58 @@
+Output:
+
+This program determines if a number is even or odd from 200 to 225
+200     EVEN
+201     ODD
+202     EVEN
+203     ODD
+204     EVEN
+205     ODD
+206     EVEN
+207     ODD
+208     EVEN
+209     ODD
+210     EVEN
+211     ODD
+212     EVEN
+213     ODD
+214     EVEN
+215     ODD
+216     EVEN
+217     ODD
+218     EVEN
+219     ODD
+220     EVEN
+221     ODD
+222     EVEN
+223     ODD
+224     EVEN
+225     ODD
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main() 
+{
+	//Print this program's use
+	cout << "This program determines if a number is even or odd from 200 to 225\n";
+
+	//For loop from 200 to 225
+	for (int num = 200; num <= 225; num += 1) 
+	{
+		//if Even
+		if (num % 2 == 0) { cout << num << "     EVEN" << endl;}
+		//else Odd
+		else { cout << num << "     ODD" << endl; }
+	}
+
+	return 0;
+}

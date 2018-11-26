@@ -1,0 +1,73 @@
+Output:
+
+This program generates 10000 random numbers between 1 - 10.
+   1        1017
+   2        1032
+   3         968
+   4         996
+   5         954
+   6         994
+   7        1035
+   8         989
+   9        1011
+  10        1005
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program generates 10000 random numbers between 1 - 10." << endl;
+	
+	//Set-up different random numbers everytime we run the program
+	srand(time(0));
+
+	//Initialize variables
+	int numberCounts[11] = { 0 };
+	int num = 0;
+	ofstream outfile;
+
+	//Calculate and count random numbers
+	for (int i = 0; i <= 10000; i += 1)
+	{
+		num = rand() % 10 + 1;
+		numberCounts[num] += 1;
+	}
+
+	//Print out results to console
+	for (int i = 1; i <= 10; i += 1)
+	{
+		cout << setw(4) << i << setw(12) << numberCounts[i] << endl;
+	}
+
+	//Create file
+	outfile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment10Data.txt");
+	if (!outfile) //file not created
+	{
+		cout << "Can't create the output file, check file path.\n";
+		cout << "This program will terminate.\n";
+		return 0;
+	}
+
+	//Print results to file
+	for (int i = 1; i <= 10; i += 1)
+	{
+		outfile << setw(4) << i << setw(12) << numberCounts[i] << endl;
+	}
+
+	//Close file
+	outfile.close();
+
+	return 0;
+}

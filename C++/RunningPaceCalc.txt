@@ -1,0 +1,114 @@
+Output:
+
+This program takes in a race and calculates a pace.
+Enter race distance in miles: 13.1
+Enter hours taken: 2
+Enter minutes taken: 36
+Enter seconds taken: 6
+Enter race name: Swinging Bridge Run
+Enter city name: Tishomingo
+Enter state abbreviation: MS
+Enter the date: April 21, 2018
+13.1 miles, 2 hours, 36 minutes, 6 seconds, Swinging Bridge Run, Tishomingo MS, April 21, 2018
+Pace: 11 minutes and 54 seconds
+
+This program takes in a race and calculates a pace.
+Enter race distance in miles: 3.12
+Enter hours taken: 0
+Enter minutes taken: 25
+Enter seconds taken: 58
+Enter race name: Run for the Cure
+Enter city name: Moulton
+Enter state abbreviation: AL
+Enter the date: April 14, 2018
+3.12 miles, 0 hours, 25 minutes, 58 seconds, Run for the Cure, Moulton AL, April 14, 2018
+Pace: 8 minutes and 19 seconds
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+	//Print what this program does
+	cout << "This program takes in a race and calculates a pace." << endl;
+
+	//Initialize variables
+	double distance;
+	int hours;
+	int minutes;
+	int seconds;
+	string raceName;
+	string city;
+	string state;
+	string date;
+
+	double pace;
+	double mph;
+
+	string buff;
+	ofstream outfile;
+
+	//Get input from user
+	cout << "Enter race distance in miles: ";
+	cin >> distance;
+	cout << "Enter hours taken: ";
+	cin >> hours;
+	cout << "Enter minutes taken: ";
+	cin >> minutes;
+	cout << "Enter seconds taken: ";
+	cin >> seconds;
+
+	getline(cin, buff); //No idea why but this fixes things
+
+	cout << "Enter race name: ";
+	getline(cin, raceName);
+	cout << "Enter city name: ";
+	getline(cin, city);
+	cout << "Enter state abbreviation: ";
+	getline(cin, state);
+	cout << "Enter the date: ";
+	getline(cin, date);
+
+	//Calculate pace and mph
+	//mph = distance / (hours + (minutes / 60) + (seconds / (60 * 60) )); //distance / time
+	pace = ((hours * 60 * 60) + (minutes * 60) + seconds) / distance;// total time / distance
+
+
+	//Print to screen
+	cout << distance << " miles, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds, ";
+	cout << raceName << ", " << city << " " << state << ", " << date << endl;
+	//cout << "MPH: " << mph << endl;
+	cout << "Pace: " << (int) pace / 60  << " minutes and " << (int) pace % 60 << " seconds" << endl;
+
+	//Print to txt file
+	outfile.open("C:\\Users\\Erik\\OneDrive\\Documents\\Calhoun\\C++\\Data\\Assignment28Data.txt", fstream::app);
+	if (!outfile)
+	{
+		cout << "File not found." << endl;
+		return 1;
+	}
+	outfile << distance << " miles, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds, ";
+	outfile << raceName << ", " << city << " " << state << ", " << date << endl;
+	//outfile << "MPH: " << mph << endl;
+	outfile << "Pace: " << (int)pace / 60 << " minutes and " << (int)pace % 60 << " seconds" << endl;
+
+
+	return 0;
+}

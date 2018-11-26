@@ -1,0 +1,154 @@
+Output:
+
+This program takes in bowler scores from a file and prints them into a nicely formatted table.
+Bowler's Name:       Game 1:     Game 2:     Game 3:   Bowler Average:
+
+Linus too good           100          23         210            111.00
+Charlie brown              1           2          12              5.00
+Snoopy                   300         300         100            233.33
+Peperment Patty          223         300         221            248.00
+Pig Pen                  234         123         212            189.67
+Red Headed Girl          123         222         111            152.00
+Marcey                     1           2           3              2.00
+keith hallmark           222         300         180            234.00
+anna hallmark            222         111         211            181.33
+roxie hallmark           100         100           2             67.33
+
+Game Averages:         40.10       32.50       32.20
+
+The bowler with the highest average score was Peperment Patty with an average score of 248.00
+The bowler with the lowest average score was Marcey with an average score of 2.00
+
+Enter a bowler's name: Linus too good
+Linus too good had an average score of 111.00
+
+
+
+Code:
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program takes in bowler scores from a file and prints them into a nicely formatted table." << endl;
+
+	//Initialize variables
+	ifstream infile;
+	string bowlerNames[10];
+	double bowlerScores[10][3] = { 0 };
+	double bowlerAverages[10] = { 0 };
+	double gameAverages[3] = { 0 };
+	int highestScoreIndex = 0;
+	int lowestScoreIndex = 0;
+	string searchName;
+
+	//Get the names and scores of the bowlers
+	infile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\bowlers2.txt");
+	if (!infile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+
+	//Get data from file
+	for (int i = 0; i <= 9; i += 1)
+	{
+		getline(infile, bowlerNames[i]);
+		infile >> bowlerScores[i][0];
+		infile >> bowlerScores[i][1];
+		infile >> bowlerScores[i][2];
+		infile.ignore(100, '\n');
+	}
+	infile.close();
+
+	//Calculate each bowler's average score
+	for (int i = 0; i <= 9; i += 1)
+	{
+		double total = 0;
+		for (int i2 = 0; i2 <= 2; i2 += 1)
+		{
+			total += bowlerScores[i][i2];
+		}
+		bowlerAverages[i] = total / 3;
+	}
+
+	//Find the bowler with the highest average score
+	for (int i = 0; i <= 9; i += 1) 
+	{
+		if (bowlerAverages[i] > bowlerAverages[highestScoreIndex]) highestScoreIndex = i;
+	}
+
+	//FInd the bowler with the lowest average score
+	for (int i = 0; i <= 9; i += 1)
+	{
+		if (bowlerAverages[i] < bowlerAverages[lowestScoreIndex]) lowestScoreIndex = i;
+	}
+
+	//Calculate the average score for each game
+	for (int i = 0; i <= 2; i += 1)
+	{
+		double total = 0;
+		for (int i2 = 0; i2 <= 2; i2 += 1)
+		{
+			total += bowlerScores[i2][i];
+		}
+		gameAverages[i] = total / 10;
+	}
+
+	//Print bowlers and their scores
+	cout << fixed;
+	cout << setw(16) << left << "Bowler's Name:" << right << setw(12) << "Game 1:";
+	cout << setw(12) << "Game 2:" << setw(12) << "Game 3:" << setw(18) << "Bowler Average:" << endl << endl;
+	for (int i = 0; i <= 9; i += 1)
+	{
+		//print bowler names
+		cout << setw(16) << left << bowlerNames[i];
+		//print bowler scores
+		cout << setprecision(0) << right;
+		for (int i2 = 0; i2 <= 2; i2 += 1)
+		{
+			cout << setw(12) << bowlerScores[i][i2];
+		}
+		//print bowler's average
+		cout << setw(18) << setprecision(2) << bowlerAverages[i];
+		cout << endl;
+	}
+	cout << endl;
+
+	//Print the average score for each game
+	cout << setw(16) << left << "Game Averages:";
+	cout << setprecision(2) << right;
+	for (int i = 0; i <= 2; i += 1) cout << setw(12) << gameAverages[i];
+	cout << endl << endl;
+
+	//Print the bowler with the highest average score
+	cout << left << "The bowler with the highest average score was ";
+	cout << bowlerNames[highestScoreIndex] << " with an average score of " << bowlerAverages[highestScoreIndex] << endl;
+
+	//Print the bowler with the lowest average score
+	cout << left << "The bowler with the lowest average score was ";
+	cout << bowlerNames[lowestScoreIndex] << " with an average score of " << bowlerAverages[lowestScoreIndex] << endl;
+	cout << endl;
+
+	//Ask for a bowler's name and print out their name and average score
+	cout << "Enter a bowler's name: ";
+	getline(cin, searchName);
+	for (int i = 0; i <= 9; i += 1) 
+	{
+		if (searchName == bowlerNames[i]) cout << bowlerNames[i] << " had an average score of " << bowlerAverages[i] << endl;
+	}
+
+
+	return 0;
+}

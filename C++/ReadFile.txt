@@ -1,0 +1,78 @@
+Output:
+
+This program reads in a comma delimated file and prints it out
+jane doe          100    99    98
+John smith         55    66    44
+Keith Hallmark    100   100   100
+Buggs Bunny        99    88    89
+Charlie Brown      66    65    80
+Road Runner         0     0     1
+Sure S Slow        44    22    33
+
+
+
+Code:
+
+
+#include "pch.h"
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+
+using namespace std;
+
+int main()
+{
+	//Print what this program does
+	cout << "This program reads in a comma delimated file and prints it out " << endl;
+
+	//Initialize variables
+	ifstream infile;
+	string line;
+	stringstream ss;
+	char buff[80];
+	string name;
+	int grade1;
+	int grade2;
+	int grade3;
+	
+	//Get the names and scores of the bowlers
+	infile.open("C:\\Users\\erikf\\OneDrive\\Documents\\Calhoun\\C++\\Data\\gradesss.txt");
+	if (!infile)
+	{
+		cout << "Can't read file, exiting program." << endl;
+		return 1;
+	}
+
+	//Read in and print out the comma delimited file using stringstream
+	for (int r = 0; r <= 6; r += 1) {
+		infile.getline(buff, 80);
+		ss << buff;
+		ss.getline(buff, 50, ',');
+		name = buff;
+		ss.getline(buff, 50, ',');
+		grade1 = atoi(buff);
+		ss.getline(buff, 50, ',');
+		grade2 = atoi(buff);
+		ss.getline(buff, 50);
+		grade3 = atoi(buff);
+		cout << setw(15) << left << name;
+		cout << setw(6) << right << grade1;
+		cout << setw(6) << right << grade2;
+		cout << setw(6) << right << grade3 << endl;
+		ss << "";
+		ss.clear();
+	}
+	ss << "";
+	ss.clear();
+	infile.close();
+
+	return 0;
+}
