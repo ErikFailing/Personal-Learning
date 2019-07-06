@@ -1,0 +1,119 @@
+PRINTING DIRECTED ADJACENCY MATRIX FOR THE BINARY TREE:
+
+Jo 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 
+Jo 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Ti 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Ad 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Ja 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 
+Ma 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Ca 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
+Ri 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Mi 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 
+Je 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Al 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+Ro 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Jo 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
+Jo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 
+Fr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Al 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 
+Ke 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+Je 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+Sa 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Co 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+Finding sibling of vertex 1 on the matrix:
+FirstName: Alice
+LastName: Rice
+Major: MATH
+Gender: F
+Email: alicerice@hotmail.com
+GPA: 3.65
+StreetName: Hughes
+StreetNo: 188
+City: Nashville
+Zip: 42163
+State: TN
+BirthDate: 8 15 1998
+-----
+
+Finding the ancestors of vertex 6:
+FirstName: Marissa
+LastName: Morgan
+Major: BA
+Gender: F
+Email: mmorgan@uah.edu
+GPA: 3.54
+StreetName: Basalt
+StreetNo: 12463
+City: Houston
+Zip: 77077
+State: TX
+BirthDate: 5 1 1994
+-----
+FirstName: Jason
+LastName: Bull
+Major: BA
+Gender: M
+Email: jbull@uah.edu
+GPA: 3.54
+StreetName: Calvary
+StreetNo: 1800
+City: Huntsville
+Zip: 35816
+State: AL
+BirthDate: 7 29 1994
+-----
+FirstName: Timmothy
+LastName: McGee
+Major: CS
+Gender: M
+Email: timmy@uah.edu
+GPA: 4
+StreetName: Deborah
+StreetNo: 1249
+City: Huntsville
+Zip: 35801
+State: AL
+BirthDate: 9 15 1993
+-----
+FirstName: Johnathan
+LastName: Reinhardt
+Major: CPE
+Gender: M
+Email: jrein@uah.edu
+GPA: 2.97
+StreetName: Sparkman
+StreetNo: 1500
+City: Huntsville
+Zip: 35816
+State: AL
+BirthDate: 6 15 1995
+-----
+FirstName: John
+LastName: Rich
+Major: CS
+Gender: M
+Email: jrich@uah.edu
+GPA: 3.54
+StreetName: Triana
+StreetNo: 188
+City: Huntsville
+Zip: 35806
+State: AL
+BirthDate: 9 10 1996
+-----
+
+Finding earliest common ancestor of vertex 7 (Ri) and 10 (Al) on the matrix:
+FirstName: Jason
+LastName: Bull
+Major: BA
+Gender: M
+Email: jbull@uah.edu
+GPA: 3.54
+StreetName: Calvary
+StreetNo: 1800
+City: Huntsville
+Zip: 35816
+State: AL
+BirthDate: 7 29 1994
+-----
