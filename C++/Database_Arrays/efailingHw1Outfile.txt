@@ -1,0 +1,277 @@
+Name: Erik Failing
+Username: efailing
+Assignment 1
+
+FirstName: John
+LastName: Rich
+Major: CS
+Gender: M
+Email: jrich@uah.edu
+GPA: 3.54
+StreetName: Triana
+StreetNo: 188
+City: Huntsville
+Zip: 35806
+State: AL
+BirthDate: 9 10 1996
+-----
+FirstName: Alice
+LastName: Rice
+Major: MATH
+Gender: F
+Email: alicerice@hotmail.com
+GPA: 3.65
+StreetName: Hughes
+StreetNo: 188
+City: Nashville
+Zip: 42163
+State: TN
+BirthDate: 8 15 1998
+-----
+FirstName: Johnathan
+LastName: Reinhardt
+Major: CPE
+Gender: M
+Email: jrein@uah.edu
+GPA: 2.97
+StreetName: Sparkman
+StreetNo: 1500
+City: Huntsville
+Zip: 35816
+State: AL
+BirthDate: 6 15 1995
+-----
+FirstName: Timmothy
+LastName: McGee
+Major: CS
+Gender: M
+Email: timmy@uah.edu
+GPA: 4
+StreetName: Deborah
+StreetNo: 1249
+City: Huntsville
+Zip: 35801
+State: AL
+BirthDate: 9 15 1993
+-----
+FirstName: Jason
+LastName: Bull
+Major: BA
+Gender: M
+Email: jbull@uah.edu
+GPA: 3.54
+StreetName: Calvary
+StreetNo: 1800
+City: Huntsville
+Zip: 35816
+State: AL
+BirthDate: 7 29 1994
+-----
+FirstName: Marissa
+LastName: Morgan
+Major: BA
+Gender: F
+Email: mmorgan@uah.edu
+GPA: 3.54
+StreetName: Basalt
+StreetNo: 12463
+City: Houston
+Zip: 77077
+State: TX
+BirthDate: 5 1 1994
+-----
+FirstName: John
+LastName: Halsey
+Major: CPE
+Gender: M
+Email: john117@uah.edu
+GPA: 3.571
+StreetName: Reach
+StreetNo: 75
+City: Bethesda
+Zip: 20817
+State: MD
+BirthDate: 3 7 1996
+-----
+FirstName: Miranda
+LastName: Keyes
+Major: IS
+Gender: F
+Email: mirak@uah.edu
+GPA: 3.8
+StreetName: Dawn
+StreetNo: 178
+City: Huntsville
+Zip: 35802
+State: AL
+BirthDate: 2 28 1995
+-----
+FirstName: Alice
+LastName: Abernathy
+Major: Biotechnology
+Gender: F
+Email: aabe@uah.edu
+GPA: 4
+StreetName: Jordan
+StreetNo: 666
+City: Gatlinburg
+Zip: 37738
+State: TN
+BirthDate: 4 17 1995
+-----
+FirstName: Ada
+LastName: Wong
+Major: Law
+Gender: F
+Email: adaw@uah.edu
+GPA: 3.54
+StreetName: Pulaski
+StreetNo: 214
+City: Destin
+Zip: 35806
+State: FL
+BirthDate: 7 12 1993
+-----
+FirstName: Jessica
+LastName: Jones
+Major: ECE
+Gender: M
+Email: jejjones@uah.edu
+GPA: 3.3
+StreetName: Pearman
+StreetNo: 1300
+City: Florence
+Zip: 45916
+State: SC
+BirthDate: 12 21 1994
+-----
+FirstName: Jonathon
+LastName: Wick
+Major: CS
+Gender: M
+Email: jwick@uah.edu
+GPA: 3.7
+StreetName: Chandler
+StreetNo: 1100
+City: Huntsville
+Zip: 35806
+State: AL
+BirthDate: 2 2 1996
+-----
+FirstName: Kelly
+LastName: Masters
+Major: IS
+Gender: F
+Email: kmast@uah.edu
+GPA: 4
+StreetName: Brooklyn
+StreetNo: 22
+City: San Antonio
+Zip: 73014
+State: TX
+BirthDate: 2 14 1997
+-----
+FirstName: Jeremy
+LastName: Rickards
+Major: CS
+Gender: M
+Email: jrick@uah.edu
+GPA: 3.54
+StreetName: Pratt
+StreetNo: 17
+City: Northville
+Zip: 60811
+State: MI
+BirthDate: 9 21 1996
+-----
+FirstName: Sarah
+LastName: Palmer
+Major: CPE
+Gender: F
+Email: spalm@uah.edu
+GPA: 3.54
+StreetName: Oldrailroad
+StreetNo: 188
+City: Fairbanks
+Zip: 99091
+State: AK
+BirthDate: 9 10 1996
+-----
+FirstName: Fred
+LastName: Mercer
+Major: CSE
+Gender: M
+Email: fmerc@uah.edu
+GPA: 3.3
+StreetName: Millicas
+StreetNo: 231
+City: New York
+Zip: 10017
+State: NY
+BirthDate: 9 12 1995
+-----
+FirstName: Conrad
+LastName: Smith
+Major: CS
+Gender: M
+Email: csmith@uah.edu
+GPA: 3.54
+StreetName: Trudy
+StreetNo: 17
+City: Birmingham
+Zip: 35516
+State: AL
+BirthDate: 9 30 1996
+-----
+FirstName: Catherine
+LastName: Jones
+Major: CS
+Gender: F
+Email: cj@uah.edu
+GPA: 3.71
+StreetName: Bradford
+StreetNo: 91
+City: Anchorage
+Zip: 90922
+State: AK
+BirthDate: 12 19 1993
+-----
+FirstName: Ritchie
+LastName: Rich
+Major: CS
+Gender: M
+Email: rrich@uah.edu
+GPA: 3.54
+StreetName: Trunk
+StreetNo: 21
+City: Scottsboro
+Zip: 35836
+State: AL
+BirthDate: 1 10 1994
+-----
+FirstName: Rosalie
+LastName: Cullen
+Major: CS
+Gender: F
+Email: rcullen@uah.edu
+GPA: 3.71
+StreetName: Trunk
+StreetNo: 21
+City: Scottsboro
+Zip: 35836
+State: AL
+BirthDate: 6 10 1995
+-----
+
+
+TESTING UNUSED METHODS: 
+
+3.71
+
+BirthDate: 6 10 1995
+
+StreetName: Trunk
+StreetNo: 21
+City: Scottsboro
+Zip: 35836
+State: AL
